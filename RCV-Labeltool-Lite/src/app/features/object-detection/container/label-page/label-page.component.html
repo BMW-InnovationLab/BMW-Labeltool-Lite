@@ -1,0 +1,26 @@
+<ng-container *ngIf="image; else noImage">
+  <rcv-bounding-box-editor
+    #editor
+    [hoveredLabel]="hoveredLabel$ | async"
+    [labels]="labels$ | async"
+    [objectClasses]="objectclasses$ | async"
+    [selectedLabel]="selectedLabel$ | async"
+    [selectedObjectClass]="selectedObjectClass"
+    [size]="size"
+    [options]="{ catchBoxClicks: true }"
+    (hovered)="hoverLabel($event)"
+    (selected)="selectLabel($event)"
+    (elementAdded)="elementAdded($event)"
+    (elementChanged)="elementChanged($event)"
+    (elementRemoved)="elementRemoved($event)"
+  >
+    <rcv-selected-label-options
+      [objectClasses]="objectclasses$ | async"
+      [selectedLabel]="selectedLabel$ | async"
+      (selectObjectClass)="selectObjectClass($event)"
+      (updateLabel)="elementChanged($event)"
+    ></rcv-selected-label-options>
+  </rcv-bounding-box-editor>
+</ng-container>
+
+<ng-template #noImage><p class="no-image">No Picture Available</p></ng-template>

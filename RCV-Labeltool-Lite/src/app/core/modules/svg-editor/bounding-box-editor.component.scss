@@ -1,0 +1,133 @@
+.editor-pane {
+  cursor: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .bounding-box {
+    cursor: move;
+  }
+
+  .grab {
+    cursor: grab;
+  }
+
+  .move {
+    cursor: move;
+  }
+
+  .resize-box-top-left,
+  .resize-box-bottom-right {
+    cursor: nw-resize;
+  }
+
+  .resize-box-top-center,
+  .resize-box-bottom-center {
+    cursor: n-resize;
+  }
+
+  .resize-box-top-right,
+  .resize-box-bottom-left {
+    cursor: ne-resize;
+  }
+
+  .resize-box-middle-left,
+  .resize-box-middle-right {
+    cursor: e-resize;
+  }
+}
+
+.pane-container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &.selected {
+    z-index: 100;
+
+    .editor-pane {
+      opacity: 0.8;
+    }
+  }
+}
+
+.label-options {
+  background: #fff;
+  border: solid 1px;
+  padding: 0 15px;
+  position: absolute;
+  width: 200px;
+  z-index: 100;
+}
+
+// SVG.JS
+/* stylelint-disable */
+.svg_select_points {
+  fill: white;
+}
+
+.svg_select_points_lt {
+  cursor: nw-resize;
+}
+
+.svg_select_points_rt {
+  cursor: ne-resize;
+}
+
+.svg_select_points_rb {
+  cursor: se-resize;
+}
+
+.svg_select_points_lb {
+  cursor: sw-resize;
+}
+
+.svg_select_points_t {
+  cursor: n-resize;
+}
+
+.svg_select_points_r {
+  cursor: e-resize;
+}
+
+.svg_select_points_b {
+  cursor: s-resize;
+}
+
+.svg_select_points_l {
+  cursor: w-resize;
+}
+
+.svg_select_points_rot {
+  fill: #f9ffed;
+  stroke: black;
+  stroke-width: 1;
+}
+
+.svg_select_points_point {
+  cursor: move;
+}
+
+%svg_select_box {
+  fill: gray;
+  fill-opacity: 0.1;
+  pointer-events: none; /* This ons is needed if you want to deselect or drag the shape*/
+  stroke: white;
+  stroke-dasharray: 10 10;
+  stroke-opacity: 0.8;
+  stroke-width: 1;
+}
+
+.svg_select_boundingRect {
+  @extend %svg_select_box;
+}
+
+.svg_select_selectBox {
+  @extend %svg_select_box;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+  stroke-width: 2;
+}

@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Documentation\Rcv.LabelTool.Backend.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Paths\**" />
+    <Compile Remove="Controllers\Results\**" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="Controllers\Paths\**" />
+    <Content Remove="Controllers\Results\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="Controllers\Paths\**" />
+    <EmbeddedResource Remove="Controllers\Results\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="Controllers\Paths\**" />
+    <None Remove="Controllers\Results\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Documentation\Rcv.LabelTool.Backend.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Documentation\Rcv.LabelTool.Backend.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="RCV.Babel" Version="1.1.0" />
+    <PackageReference Include="Rcv.ControllerBase" Version="1.0.0" />
+    <PackageReference Include="Rcv.HttpUtils" Version="1.4.0" />
+    <PackageReference Include="Serilog" Version="2.7.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rcv.Labeltool.Contracts\Rcv.LabelTool.Contracts.csproj" />
+    <ProjectReference Include="..\Rcv.LabelTool.Logic\Rcv.LabelTool.Logic.csproj" />
+    <ProjectReference Include="..\Rcv.Labeltool.Services\Rcv.LabelTool.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Rcv.ControllerBase">
+      <HintPath>..\ExternalLibraries\Rcv.ControllerBase\Rcv.ControllerBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Rcv.HttpUtils">
+      <HintPath>..\ExternalLibraries\Rcv.HttpUtils\Rcv.HttpUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Robotron.Imagine">
+      <HintPath>..\ExternalLibraries\Robotron.Imagine\Robotron.Imagine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Docker\" />
+  </ItemGroup>
+
+</Project>

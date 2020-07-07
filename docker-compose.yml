@@ -1,0 +1,35 @@
+version: '3'
+services:
+
+  rcvlabeltoollitebackend:
+    build:
+      context: ./RCV-LT-Lite-BE
+      dockerfile: docker/Dockerfile
+    image: rcv.labeltool.lite.backenddddd:latest
+    restart: always
+    networks:
+      - rcv-lite-net
+    ports:
+      - "19001:80"
+    volumes:
+      # add your mount here or provide a prefilled docker volume
+      - ./training-data:/training-data
+      
+  rcvlabeltoollite:
+    build:
+      context: ./RCV-Labeltool-Lite
+      dockerfile: docker/Dockerfile
+    image: rcv.labeltool.liteeeeeee143244547823:latest
+    restart: always
+    networks:
+      - rcv-lite-net
+    ports:
+      - "8081:80"
+    depends_on:
+      - rcvlabeltoollitebackend    
+
+volumes:
+  rcv-labeltool-lite:      
+
+networks:
+  rcv-lite-net:

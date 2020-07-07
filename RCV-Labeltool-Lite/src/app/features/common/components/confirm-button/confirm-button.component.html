@@ -1,0 +1,30 @@
+<div class="confirm-button flex items-center">
+  <div class="wrapper" [ngClass]="{ sure: sure }">
+    <ng-content></ng-content>
+    <div class="remove-actions flex items-center">
+      <span>{{ confirmText }}</span>
+      <button
+        mat-icon-button
+        (click)="emitRemove()"
+        matTooltip="Remove"
+        matTooltipPosition="above"
+        data-cy="confirmDelete"
+      >
+        <mat-icon svgIcon="check"></mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <button
+    mat-icon-button
+    class="-small"
+    (click)="toggleSure($event)"
+    [disabled]="disabled"
+    [ngClass]="{ closer: sure }"
+    [matTooltip]="tooltip"
+    matTooltipPosition="above"
+    data-cy="requestDelete"
+  >
+    <mat-icon [svgIcon]="!sure ? 'delete' : 'close'"></mat-icon>
+  </button>
+</div>

@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "max-nesting-depth": 2,
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["ng-deep"]
+      }
+    ]
+  }
+}

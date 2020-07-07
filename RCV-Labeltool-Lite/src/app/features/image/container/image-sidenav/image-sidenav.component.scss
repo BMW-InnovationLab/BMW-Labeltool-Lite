@@ -1,0 +1,105 @@
+@import '~@angular/material/theming';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header {
+  height: 128px;
+  justify-content: center;
+}
+
+.sidenav {
+  overflow: auto;
+  width: 250px;
+}
+
+.page-navigation {
+  display: flex;
+  width: 100%;
+}
+
+button {
+  box-shadow: none !important;
+}
+
+.link {
+  display: block;
+  flex: 1;
+  line-height: 1.3em;
+  text-align: center;
+  white-space: normal;
+
+  p {
+    margin: 15px auto;
+  }
+}
+
+mat-form-field {
+  flex: 1;
+  position: relative;
+  top: 8px;
+}
+
+.topic-select {
+  padding: 0;
+
+  button {
+    height: 66.5px;
+    width: 100%;
+  }
+
+  label {
+    font-size: 0.75em;
+    left: 16px;
+    position: absolute;
+    top: -14px;
+  }
+}
+
+rcv-image-navigation {
+  flex: 1;
+}
+
+.bottom-actions {
+  display: flex;
+  padding: 0;
+
+  .bottom-action {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 66.5px;
+    justify-content: space-around;
+    padding: 0 1em;
+
+    &:first-child {
+      border-right: solid 1px $dark-dividers;
+    }
+
+    &.shrink {
+      flex-basis: auto;
+      flex-grow: 0;
+    }
+  }
+
+  button {
+    box-shadow: none !important;
+  }
+}
+
+.image-actions {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.help-box {
+  align-items: flex-end;
+  display: flex;
+  flex: 1;
+  min-height: 50px;
+  margin: 0 1em;
+}

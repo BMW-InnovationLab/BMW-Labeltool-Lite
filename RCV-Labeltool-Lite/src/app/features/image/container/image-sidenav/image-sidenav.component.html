@@ -1,0 +1,36 @@
+<mat-toolbar class="header" role="header"> <img src="assets/images/logo4.png" height=40% width=90% /> </mat-toolbar>
+
+<nav class="page-navigation">
+  <a
+    mat-raised-button
+    class="link mat-elevation-z1"
+    routerLink="object-detection"
+    routerLinkActive="mat-primary"
+  >
+    <p>Object Detection</p>
+  </a>
+</nav>
+
+<div class="action-box topic-select">
+  <button mat-button color="primary" [matTooltip]="'Select Topic'" (click)="selectTopic()">
+    <span>Select Topic</span><i> ({{ topic?.Name }})</i>
+  </button>
+</div>
+
+<div class="action-box"><rcv-image-navigation></rcv-image-navigation></div>
+
+<router-outlet *ngIf="image && topic" name="actions"></router-outlet>
+
+<div class="action-box bottom-actions">
+  <div class="bottom-action">
+    <router-outlet name="save-actions"></router-outlet>
+  </div>
+</div>
+
+<div class="help-box">
+  <div class="flex flex-auto items-center justify-between">
+    <button mat-icon-button [matTooltip]="'Labeltool Version'" (click)="showHelp()">
+      <mat-icon svgIcon="help-circle"></mat-icon>
+    </button>
+  </div>
+</div>

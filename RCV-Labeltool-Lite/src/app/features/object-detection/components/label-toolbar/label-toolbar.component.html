@@ -1,0 +1,29 @@
+<rcv-confirm-button
+  [confirmText]="'Remove All?'"
+  [disabled]="!labels.length"
+  [tooltip]="'Remove all labels.'"
+  (remove)="remove.emit()"
+>
+  <div class="flex">
+    <button
+      mat-icon-button
+      (click)="toggle.emit(!visible)"
+      [disabled]="!labels.length"
+      matTooltip="{{ visible ? 'Hide all labels.' : 'Zeige alle Label' }}"
+      matTooltipPosition="left"
+      data-cy="hideAllLabels"
+    >
+      <mat-icon [svgIcon]="visible ? 'eye' : 'eye-off'"></mat-icon>
+    </button>
+    <div class="flex-auto"></div>
+    <button
+      mat-icon-button
+      (click)="restore.emit()"
+      [matTooltip]="'Reset all changes.'"
+      matTooltipPosition="left"
+      [disabled]="!image"
+    >
+      <mat-icon svgIcon="backup-restore"></mat-icon>
+    </button>
+  </div>
+</rcv-confirm-button>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCV.Babel", "RCV.Babel\RCV.Babel.csproj", "{6D5DE763-1BBA-4855-9435-834A8C11E1EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rcv.Babel.Tests", "Rcv.Babel.Tests\Rcv.Babel.Tests.csproj", "{E08DFD87-9B88-467B-9041-6C95B4080B37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D5DE763-1BBA-4855-9435-834A8C11E1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D5DE763-1BBA-4855-9435-834A8C11E1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D5DE763-1BBA-4855-9435-834A8C11E1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D5DE763-1BBA-4855-9435-834A8C11E1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08DFD87-9B88-467B-9041-6C95B4080B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08DFD87-9B88-467B-9041-6C95B4080B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08DFD87-9B88-467B-9041-6C95B4080B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08DFD87-9B88-467B-9041-6C95B4080B37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92E5BE36-54F3-43F4-83B6-BE624B221C6F}
+	EndGlobalSection
+EndGlobal

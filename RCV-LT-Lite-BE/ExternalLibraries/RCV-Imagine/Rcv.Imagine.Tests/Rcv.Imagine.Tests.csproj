@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Testdata\005_2_QOKPTj8X1gg.jpg" />
+    <None Remove="Testdata\2008_003743.jpg" />
+    <None Remove="Testdata\corruptImage.png" />
+    <None Remove="Testdata\schraube.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Testdata\005_2_QOKPTj8X1gg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Testdata\2008_003743.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Testdata\corruptImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Testdata\schraube.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0005" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta0005" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Robotron.Imagine\Robotron.Imagine.csproj" />
+  </ItemGroup>
+
+</Project>

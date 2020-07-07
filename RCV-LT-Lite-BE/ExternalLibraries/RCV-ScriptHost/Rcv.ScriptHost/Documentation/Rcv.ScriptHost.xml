@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rcv.ScriptHost</name>
+    </assembly>
+    <members>
+        <member name="T:Robotron.PythonHost.Controllers.ScriptController">
+            <summary>
+            Controller for handling script execution.
+            </summary>
+        </member>
+        <member name="M:Robotron.PythonHost.Controllers.ScriptController.Get">
+            <summary>
+            Creates a new session for run scripts.
+            </summary>
+            <returns>Resultobject of contoller</returns>
+            <response code="200">Newly created python session</response>
+            <response code="500">Unexpected error occures</response>
+        </member>
+        <member name="M:Robotron.PythonHost.Controllers.ScriptController.Put(System.String,System.Collections.Generic.IEnumerable{Rcv.ScriptHost.Contracts.Models.Script},System.Boolean)">
+            <summary>
+            Run scripts in definied session.
+            </summary>
+            <param name="sessionId">ID of session where to run scripts</param>
+            <param name="scripts">Scripts to run</param>
+            <param name="combined">Scripts should be runned combined</param>
+            <returns>Resultobject of controller</returns>
+            <response code="200">Scripts successfully runned</response>
+            <response code="400">Session id and scripts must be provided</response>
+            <response code="404">No session with given id was found</response>
+            <response code="500">Unexpected error occures</response>
+        </member>
+        <member name="M:Robotron.PythonHost.Controllers.ScriptController.Delete(System.String)">
+            <summary>
+            End up session with given session-id.
+            </summary>
+            <param name="sessionId">Id of session to end</param>
+            <returns>Resultobject of controller</returns>
+            <response code="200">Session has ended successfully</response>
+            <response code="400">Session id must be provided</response>
+            <response code="404">No session with given id was found</response>
+            <response code="500">Unexpected error occures</response>
+        </member>
+        <member name="F:RCV.ScriptHost.Startup.CORS_POLICY_NAME">
+            <summary>
+            Name of CORS policy to use.
+            </summary>
+        </member>
+        <member name="F:RCV.ScriptHost.Startup.APPLICATION_VERSION">
+            <summary>
+            Application version.
+            </summary>
+        </member>
+        <member name="F:RCV.ScriptHost.Startup.APPLICATION_NAME">
+            <summary>
+            Name of application.
+            </summary>
+        </member>
+        <member name="T:Rcv.ScriptHost.ConfigurationExtensions">
+            <summary>
+            Extension methods for configuration.
+            </summary>
+        </member>
+        <member name="M:Rcv.ScriptHost.ConfigurationExtensions.GetScriptHostConfiguration(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Get configuration for script host.
+            </summary>
+            <param name="configuration">Appsettings configuration file</param>
+            <returns>Configuration of script host</returns>
+        </member>
+        <member name="M:Rcv.ScriptHost.ConfigurationExtensions.GetAppSettings(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Get appsettings configuration section from configuration.
+            </summary>
+            <param name="configuration">Configuration to get appsettings from</param>
+            <returns>AppSettings configuration section</returns>
+        </member>
+        <member name="M:Rcv.ScriptHost.ConfigurationExtensions.GetConfiguration``1(Microsoft.Extensions.Configuration.IConfiguration,System.String)">
+            <summary>
+            Get configuration from appsettings of type.
+            </summary>
+            <typeparam name="T">Type to get</typeparam>
+            <param name="configuration">Appsettings configuration</param>
+            <param name="configurationName">Name of configuration section</param>
+            <returns>Typed configuration section</returns>
+        </member>
+        <member name="T:Rcv.ScriptHost.ServiceCollectionExtensions">
+            <summary>
+            Extensions for startup and registry of services.
+            </summary>
+        </member>
+        <member name="M:Rcv.ScriptHost.ServiceCollectionExtensions.BindConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Rcv.ScriptHost.Contracts.Models.ScriptHostConfiguration)">
+            <summary>
+            Add configuration service to service context.
+            </summary>
+            <param name="serviceCollection">Service context</param>
+            <param name="configuration">Configuration of host</param>
+        </member>
+        <member name="M:Rcv.ScriptHost.ServiceCollectionExtensions.BindServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add all services to service context
+            </summary>
+            <param name="serviceCollection">Service context</param>
+        </member>
+        <member name="M:Rcv.ScriptHost.ServiceCollectionExtensions.BindContainer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Bind container management to service context.
+            </summary>
+            <param name="serviceCollection">Service context</param>
+        </member>
+    </members>
+</doc>

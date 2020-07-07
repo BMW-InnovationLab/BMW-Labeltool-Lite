@@ -1,0 +1,47 @@
+:host {
+  margin: 0 -0.5em;
+}
+
+.image-pagination {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  position: relative;
+  top: 7px;
+}
+
+.image-index {
+  .count,
+  input {
+    display: inline-block;
+    text-align: center;
+    width: 46px;
+  }
+
+  input {
+    /* stylelint-disable property-no-vendor-prefix */
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.slider-container {
+  align-items: center;
+  display: flex;
+  margin: 0 0.5em 0.5em;
+
+  button {
+    margin-right: 0.5em;
+  }
+}
+
+.no-images {
+  margin: 1.4em 0;
+  text-align: center;
+}

@@ -1,0 +1,31 @@
+:host {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+:host.hidden {
+  display: none;
+}
+
+.backdrop {
+  background-color: #eee;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+.message {
+  margin-top: 20px;
+  text-align: center;
+}
+
+mat-progress-bar {
+  z-index: 10000;
+}

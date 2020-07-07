@@ -1,0 +1,5 @@
+<mat-form-field>
+  <mat-select [(value)]="value" [placeholder]="'Bildanzahl'" required>
+    <mat-option *ngFor="let count of counts" [value]="count"> {{ count }} </mat-option>
+  </mat-select>
+</mat-form-field>

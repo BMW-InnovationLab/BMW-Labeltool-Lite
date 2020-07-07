@@ -1,0 +1,38 @@
+.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.object-class-color {
+  background: currentColor;
+  height: 30px;
+  margin-right: 20px;
+  width: 30px;
+}
+
+.object-class-color.empty {
+  background: repeating-linear-gradient(-45deg, currentColor, currentColor 4px, #d3d3d3 4px, #d3d3d3 8px);
+}
+
+mat-expansion-panel {
+  margin: 0 0 1px;
+}
+
+mat-expansion-panel-header {
+  padding: 0 24px 0 16px;
+
+  .object-class-name {
+    line-height: 30px;
+  }
+}
+
+mat-list {
+  padding-top: 0;
+
+  mat-list-item {
+    height: 62px;
+  }
+}
+
+/deep/ .mat-expansion-panel-content .mat-expansion-panel-body {
+  padding: 0;
+}

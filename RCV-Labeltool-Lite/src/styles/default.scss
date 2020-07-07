@@ -1,0 +1,86 @@
+@import '~@angular/material/theming';
+@import 'styles';
+
+@include mat-core();
+
+// palettes
+$mat-bmw: (
+  50: #e8eaf6,
+  100: #b2cce7,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #1c69d4,
+  500: #0653b6,
+  600: #3949ab,
+  700: #002c85,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$mat-bmw-warn: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #d20000,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+// setup themes
+$theme-primary: mat-palette($mat-bmw);
+$theme-warn: mat-palette($mat-bmw-warn);
+
+$theme: mat-light-theme($theme-primary, $theme-primary, $theme-warn);
+
+// apply theme
+@include angular-material-theme($theme);
+@include basic-fab-button($theme);
+@include custom-mat-list-theme($theme);
+@include custom-mat-tree-theme($theme);
+@include loading-overlay($theme);
+@include mat-snack-bar-error-theme($theme-warn);
+@include toggle-button($theme);

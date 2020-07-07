@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Select Topic</h1>
+<div mat-dialog-content class="mat-body">
+  <mat-nav-list>
+    <mat-tree [dataSource]="topicTree.DataSource" [treeControl]="topicTree.Control">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle (click)="selectTopic(node)">
+        <mat-list-item matTreeNodePadding [class.active]="topicActive(node, data.selectedTopic)">
+          <mat-icon mat-list-icon svgIcon="collections"></mat-icon>
+          {{ node.title }}
+        </mat-list-item>
+      </mat-tree-node>
+
+      <mat-tree-node *matTreeNodeDef="let node; when: hasNestedChild">
+        <mat-list-item
+          mat-icon-button
+          matTreeNodePadding
+          matTreeNodeToggle
+          [attr.aria-label]="'toggle ' + node.title"
+        >
+          <mat-icon
+            class="mat-icon-rtl-mirror"
+            mat-list-icon
+            [svgIcon]="topicTree.Control.isExpanded(node) ? 'arrow-down' : 'arrow-right'"
+          ></mat-icon>
+          {{ node.title }}
+        </mat-list-item>
+      </mat-tree-node>
+    </mat-tree>
+  </mat-nav-list>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="primary" [mat-dialog-close]="false">Cancel</button>
+</div>

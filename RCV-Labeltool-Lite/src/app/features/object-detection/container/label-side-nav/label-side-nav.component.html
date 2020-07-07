@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row><h2>Label</h2></mat-toolbar-row>
+  <mat-toolbar-row class="label-actions">
+    <rcv-label-toolbar
+      [image]="image"
+      [labels]="labels"
+      [visible]="allLabelsVisible$ | async"
+      (toggle)="toggleVisibilityAll()"
+      (remove)="removeAll()"
+      (restore)="restore()"
+    >
+    </rcv-label-toolbar>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<ng-container *ngIf="topic; then objectaccordeon; else empty"></ng-container>
+
+<ng-template #objectaccordeon>
+  <mat-accordion [multi]="true">
+    <ng-container *ngFor="let objectClass of (objectclasses$ | async)">
+      <rcv-label-list
+        [labels]="filterLabels(labels, objectClass)"
+        [objectClass]="objectClass"
+        [selected]="selected"
+        [hovered]="hoveredLabel$ | async"
+        (select)="select($event)"
+        (remove)="remove($event)"
+        (toggle)="toggleVisibility($event)"
+        (hover)="hover($event)"
+      >
+      </rcv-label-list>
+    </ng-container>
+  </mat-accordion>
+</ng-template>
+
+<ng-template #empty><p class="info-text">No Objectclasses</p></ng-template>
+
+<p *ngIf="!labels.length" class="info-text">No Labels</p>

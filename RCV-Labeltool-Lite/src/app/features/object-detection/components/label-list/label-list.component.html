@@ -1,0 +1,23 @@
+<mat-expansion-panel *ngIf="labels.length" [expanded]="expandPanel()" [disabled]="!labels.length">
+  <mat-expansion-panel-header matTooltip="{{ objectClass.Name }}" matTooltipPosition="left">
+    <div
+      class="object-class-color"
+      [ngStyle]="{ color: '#' + objectClass.ColorCode }"
+      [ngClass]="{ empty: !labels.length }"
+    ></div>
+    <div class="object-class-name flex-auto">{{ objectClass.Name }}</div>
+  </mat-expansion-panel-header>
+  <mat-list>
+    <mat-list-item
+      *ngFor="let label of labels; trackBy: trackLabels"
+      (click)="select.emit(label)"
+      [class.active]="label.isSelected || hovered?.Id === label.Id"
+      class="mat-elevation-z2"
+      (mouseenter)="hover.emit(label)"
+      (mouseleave)="hover.emit(undefined)"
+    >
+      <rcv-label-list-item [label]="label" (toggle)="toggle.emit($event)" (remove)="remove.emit($event)">
+      </rcv-label-list-item>
+    </mat-list-item>
+  </mat-list>
+</mat-expansion-panel>

@@ -1,0 +1,197 @@
+@import 'action-box';
+@import 'flexbox';
+
+// configure font
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/Roboto-Medium.woff2') format('woff2'),
+    url('/assets/fonts/Roboto-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: normal;
+  src: url('/assets/fonts/Roboto-Italic.woff2') format('woff2'),
+    url('/assets/fonts/Roboto-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: bold;
+  src: url('/assets/fonts/Roboto-BoldItalic.woff2') format('woff2'),
+    url('/assets/fonts/Roboto-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/assets/fonts/Roboto-Light.woff2') format('woff2'),
+    url('/assets/fonts/Roboto-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  src: url('/assets/fonts/Roboto-Bold.woff2') format('woff2'),
+    url('/assets/fonts/Roboto-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/Roboto-Regular.woff2') format('woff2'),
+    url('/assets/fonts/Roboto-Regular.woff') format('woff');
+}
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+rcv-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.hidden,
+*[hidden] {
+  display: none !important;
+}
+
+// Material
+@mixin mat-snack-bar-error-theme($theme) {
+  .mat-snack-bar-container.notification-error {
+    background: map-get($theme, 500);
+    color: $light-primary-text;
+  }
+
+  .mat-simple-snackbar-action {
+    color: inherit;
+  }
+}
+
+@mixin custom-mat-list-theme($theme) {
+  .mat-list {
+    .mat-list-item-content {
+      padding: 0 !important;
+    }
+  }
+}
+
+@mixin custom-mat-tree-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-tree-node {
+    .active {
+      background: mat-color($background, hover);
+      color: mat-color($foreground, text);
+    }
+  }
+}
+
+@mixin toggle-button($theme) {
+  $accent: map-get($theme, accent);
+
+  .mat-mini-fab.toggle-button {
+    background-color: #fff;
+    box-shadow: 0 0 0 1px $dark-dividers !important;
+    color: $dark-primary-text;
+
+    &.active {
+      background-color: mat-color($accent);
+      box-shadow: none !important;
+      color: #fff;
+    }
+  }
+}
+
+@mixin basic-fab-button($theme) {
+  $primary: map-get($theme, primary);
+
+  .mat-mini-fab.basic-fab {
+    background-color: #f0f0f0;
+    color: mat-color($primary);
+  }
+}
+
+.compact-toggle-group {
+  &.mat-button-toggle-group {
+    box-shadow: none;
+  }
+
+  .mat-button-toggle {
+    border-bottom: solid 1px $dark-dividers;
+    border-left: solid 1px $dark-dividers;
+    border-top: solid 1px $dark-dividers;
+  }
+
+  .mat-button-toggle:last-child {
+    border-right: solid 1px $dark-dividers;
+  }
+
+  .mat-button-toggle-label-content {
+    line-height: 36px !important;
+    padding: 0 10px !important;
+  }
+}
+
+.mat-dialog-container {
+  .mat-dialog-actions {
+    justify-content: flex-end;
+
+    .mat-button,
+    .mat-stroked-button {
+      text-transform: uppercase;
+    }
+  }
+}
+
+// align vertical
+.mat-mini-fab > .mat-button-wrapper {
+  line-height: 20px !important;
+}
+
+.mat-icon-button {
+  &.-small {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+
+    svg {
+      transform: scale(0.75);
+    }
+  }
+}
+
+// Helpers
+.light-text,
+.caption {
+  color: $dark-secondary-text;
+}
+
+.disabled-text {
+  color: $dark-disabled-text;
+}
+
+.menu-icon {
+  margin-top: -12px !important;
+}
+
+@mixin loading-overlay($theme) {
+  $primary: map-get($theme, primary);
+
+  .loading-overlay {
+    background: map-get($primary, lighter);
+  }
+}
