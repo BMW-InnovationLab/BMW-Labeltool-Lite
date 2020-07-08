@@ -2,7 +2,7 @@
 
 -----
 
-This repository provides you with a labeling tool with little to no configuration needed! The Tool was reduced in its functional scope to the most necessary. You can start labeling your images for State-of-the-art Deep Learning training purposes right away with our Dockerized labeling tool. You can also directly use the labels provided by the LabelingTool to train with our Yolov4 and Tensorflow Training GUI repositories: 
+This repository provides you with a labeling tool with little to no configuration needed! The Tool was reduced in its functional scope to the most necessary. You can start labeling your images for State-of-the-art Deep Learning training purposes right away with our Dockerized labeling tool. You can also directly use the labels provided by the LabelingTool to train with our Yolov3 and Tensorflow Training GUI repositories: 
 
 [https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI](https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI)
 
