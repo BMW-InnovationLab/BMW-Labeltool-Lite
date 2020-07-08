@@ -216,7 +216,7 @@ A new folder "labels" is created inside your labeling project's repository.
 
 - Please note that a "train_config.json" file should be created inside your dataset's folder (Check our Yolov4-v3 Training Automation documentation). You can just copy the file from our sample_dataset and edit the classes field ( Check image below)
 
- <img src="./screenshots/Capture4.gif">
+ <img src="./screenshots/Capture4.gif" height="750">
 
 **Follow the instructions on our Yolov4-v3 Training Automation Github repository to launch it and train**
 
