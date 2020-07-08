@@ -2,7 +2,7 @@
 
 -----
 
-This repository provides you with a labeling tool with little to no configuration needed! The Tool was reduced in its functional scope to the most necessary. You can start labeling your images for State-of-the-art Deep Learning training purposes right away. You can also directly use the labels provided by the LabelingTool to train with our Yolov4 and Tensorflow Training GUI repositories: 
+This repository provides you with a labeling tool with little to no configuration needed! The Tool was reduced in its functional scope to the most necessary. You can start labeling your images for State-of-the-art Deep Learning training purposes right away with our Dockerized labeling tool. You can also directly use the labels provided by the LabelingTool to train with our Yolov4 and Tensorflow Training GUI repositories: 
 
 [https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI](https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI)
 
@@ -71,7 +71,7 @@ docker-compose up
 
 - Open any browser,go to localhost:8081 and start labeling ! 
   
-    <img src="./screenshots/screenshot.png" width="1000" height="400" >
+    <img src="./screenshots/screenshot.png" >
 
   
 
@@ -216,7 +216,7 @@ A new folder "labels" is created inside your labeling project's repository.
 
 - Please note that a "train_config.json" file should be created inside your dataset's folder (Check our Yolov4-v3 Training Automation documentation). You can just copy the file from our sample_dataset and edit the classes field ( Check image below)
 
- <img src="./screenshots/Capture4.gif" width="353" height="750">
+ <img src="./screenshots/Capture4.gif">
 
 **Follow the instructions on our Yolov4-v3 Training Automation Github repository to launch it and train**
 
