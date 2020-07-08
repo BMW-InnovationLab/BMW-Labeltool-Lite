@@ -97,7 +97,7 @@ In your project's repository, this is how the training-data folder structure sho
 
 - Let's say that the topics.json file that is inside training-data currently looks like this:
   
-  <img src="./screenshots/Capture.PNG" width="292" height="352">
+  <img src="./screenshots/Capture.PNG"  height="352">
 
   
   please add the following to your topics.json file just above the "]":
@@ -117,7 +117,7 @@ In your project's repository, this is how the training-data folder structure sho
 
   After finishing , your topics.json file should look like this : 
 
-  <img src="./screenshots/Capture1.PNG" width="290" height="480">
+  <img src="./screenshots/Capture1.PNG" height="480">
 
 
 - Inside your "myfirstdataset" folder :
@@ -151,7 +151,7 @@ In your project's repository, this is how the training-data folder structure sho
 
 - Under "**volumes**" replace what's written before the ":" with your training-data folder absolute path. For Windows users, replace the "\\" in the path with "\\\\". (check the example below)
   
-  <img src="./screenshots/Capture3.png" width="500" height="540">
+  <img src="./screenshots/Capture3.png" height="540">
   
 - Open a Terminal , go to your project's repository , and run the command below : 
   
