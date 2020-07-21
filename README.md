@@ -6,7 +6,7 @@ This repository provides you with a labeling tool with little to no configuratio
 
 [https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI](https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI)
 
-[https://github.com/BMW-InnovationLab/BMW-YOLOv3-Training-Automation](https://github.com/BMW-InnovationLab/BMW-YOLOv3-Training-Automation)
+[https://github.com/BMW-InnovationLab/BMW-YOLOv4-Training-Automation](https://github.com/BMW-InnovationLab/BMW-YOLOv4-Training-Automation)
 
 <img src="./screenshots/lastgif.gif">
 
