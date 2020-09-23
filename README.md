@@ -86,6 +86,8 @@ In your project's repository, this is how the training-data folder structure sho
   │──myfirstdataset
   │  │──images
   │  │──labels
+  │  │  │──json
+  │  │
   │  │──objectclasses.json
   │
   │──topics.json
@@ -124,7 +126,7 @@ In your project's repository, this is how the training-data folder structure sho
   
   - Create a folder called "images", this is where you put all the images that you need to label.
   
-  - Create a folder called "labels", this is where the labels are generated after labeling your images
+  - Create a folder called "labels", in "labels" create a folder called "json", this is where the labels are generated after labeling your images
   
   - Create a json file called "objectclasses", this is where  you define your classes. An example of two different classes is shown below:
     
@@ -175,19 +177,13 @@ To use the generated labels with our tensorflow gui follow the steps below :
 
    project.
 
-- Go to training-data/**yourdatasetsfolder**/
+- Go to training-data/
 
-- Copy "images" and "objectclasses.json"
+- Copy your dataset folder
 
 - Go to our Tensorflow Gui project's repository 
 
-- Go to "datasets" and create a new folder (call it "mydataset" for example)
-
-- In "mydataset" (the newly created folder) , paste the copied folders.
-
-- Create a folder called "labels", in "labels" create a folder called "json" 
-
-- Copy the labels from training-data/**yourdatasetsfolder**/labels to the "json" folder just created
+- Go to "datasets" and paste the copied folder
 
 **Follow the instructions on our Tensorflow Gui Github repository to launch it and train**
 
@@ -196,7 +192,7 @@ To use the generated labels with our tensorflow gui follow the steps below :
 To use the labels with our Yolov4-v3-Training-Automation, go to the labeltool's repository and run the command below :
 
 ```bash
-python3 converttoyolo.py --imagespath training-data/myfirstdataset/images/ --labelspath training-data/myfirstdataset/labels/
+python3 converttoyolo.py --imagespath training-data/myfirstdataset/images/ --labelspath training-data/myfirstdataset/labels/json/
 ```
 
 **Make sure to replace "myfirstdataset" in the command with your dataset's folder name**
@@ -222,7 +218,7 @@ A new folder "labels" is created inside your labeling project's repository.
 
 ## Known Errors
 
--All JSON files inside the labeltool should be encoded to "UTF-16 LE" , otherwise an error could be caused.
+-All JSON files, except the label files, within the Labeltool should be encoded in "UTF-16 LE", otherwise an error may occur.
 
 ## Acknowledgements
 

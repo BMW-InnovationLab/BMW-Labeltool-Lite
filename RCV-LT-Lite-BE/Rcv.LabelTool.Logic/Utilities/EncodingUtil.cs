@@ -22,7 +22,7 @@ namespace Rcv.LabelTool.Web.Utilities
         /// </summary>
         /// <param name="stream">Stream to read</param>
         /// <returns>StreamReader with content encoding</returns>
-        public static System.IO.StreamReader GetStreamReader(System.IO.Stream stream)
+        public static System.IO.StreamReader GetStreamReader(System.IO.Stream stream, Encoding encoding = null)
         {
             #region validation
 
@@ -33,7 +33,7 @@ namespace Rcv.LabelTool.Web.Utilities
 
             #endregion
 
-            return new System.IO.StreamReader(stream, FileEncoding);
+            return new System.IO.StreamReader(stream, (encoding ?? FileEncoding));
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Rcv.LabelTool.Web.Utilities
         /// </summary>
         /// <param name="content"></param>
         /// <returns></returns>
-        public static byte[] GetBytes(string content)
+        public static byte[] GetBytes(string content, Encoding encoding = null)
         {
             #region validation
 
@@ -52,7 +52,7 @@ namespace Rcv.LabelTool.Web.Utilities
 
             #endregion
 
-            return FileEncoding.GetBytes(content);
+            return (encoding ?? FileEncoding).GetBytes(content);
         }
     }
 }
