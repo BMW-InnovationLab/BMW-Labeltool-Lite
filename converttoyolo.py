@@ -6,8 +6,7 @@ import numpy as np
 import json
 import sys
 parser = argparse.ArgumentParser(description='Process some integers.')
-parser.add_argument('--imagespath', type=str, default="NONE")
-parser.add_argument('--labelspath', type=str , default="NONE")
+parser.add_argument('--dir', type=str, default="NONE")
 
 args = parser.parse_args()
 def get_img_shape(path):
@@ -38,12 +37,14 @@ def convert_labels(path, x1, y1, x2, y2):
     h = h*dh
     return (x,y,w,h)
 
-imageslist= os.listdir(args.imagespath)
-labelslist= os.listdir(args.labelspath)
+datasetfolder= os.path.join(os.getcwd(),"training-data",args.dir)
+
+imageslist= os.listdir(os.path.join(datasetfolder,"images"))
+labelslist= os.listdir(os.path.join(datasetfolder,"labels/json"))
 
 imageslist.sort()
 labelslist.sort()
-filename=os.path.join(os.getcwd(),"labels/yolo")
+filename=os.path.join(datasetfolder,"labels/yolo")
 os.makedirs(filename,exist_ok=True)
 
 j=0
@@ -60,11 +61,11 @@ while i<len(imageslist) and j<len(labelslist):
             image_confirmed=True
 
 
-    outf= open(os.path.join("labels/yolo",labelslist[j].replace("json","txt")),'w')
+    outf= open(os.path.join(datasetfolder,"labels/yolo",labelslist[j].replace("json","txt")),'w')
 
 
-    path=os.path.join(args.imagespath,imageslist[i])
-    label=os.path.join(args.labelspath,labelslist[j])
+    path=os.path.join(datasetfolder,"images",imageslist[i])
+    label=os.path.join(datasetfolder,"labels/json",labelslist[j])
     with open(label, 'rb') as f:
         obj=json.load(f)
 
