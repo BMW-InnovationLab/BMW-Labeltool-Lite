@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace Rcv.LabelTool.Web.Repositories
 {
@@ -57,7 +58,7 @@ namespace Rcv.LabelTool.Web.Repositories
                     return new List<Label>();
                 }
 
-                using (StreamReader streamReader = EncodingUtil.GetStreamReader(FileContainer.GetFileStream(fileName, filePath)))
+                using (StreamReader streamReader = EncodingUtil.GetStreamReader(FileContainer.GetFileStream(fileName, filePath), Encoding.UTF8))
                 {
                     string labelContentJson = streamReader.ReadToEnd();
                     return JsonConvert.DeserializeObject<IEnumerable<Label>>(labelContentJson);
@@ -122,7 +123,7 @@ namespace Rcv.LabelTool.Web.Repositories
             FileSession.Execute((fileName, filePath) =>
             {
                 string labelssAsJson = JsonConvert.SerializeObject(imageLabel.Labels);
-                byte[] newFileContent = EncodingUtil.GetBytes(labelssAsJson);
+                byte[] newFileContent = EncodingUtil.GetBytes(labelssAsJson, Encoding.UTF8);
                 FileContainer.CreateFile(fileName, newFileContent, filePath);
 
                 return true;
@@ -156,7 +157,7 @@ namespace Rcv.LabelTool.Web.Repositories
 
         private string[] GetLabelsPath(Topic topic)
         {
-            return FileContainer.CreateDirectory("labels", new[] { topic.FolderPath });
+            return FileContainer.CreateDirectory("labels/json", new[] { topic.FolderPath });
         }
 
         private string GetLabelFileName(string imageFileName)
