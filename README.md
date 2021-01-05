@@ -207,7 +207,7 @@ A new folder "yolo" is created inside your dataset's "labels" folder.
 
 [inmind.ai](https://www.inmind.ai/)
 
-[robotron.de](https://github.com/Robotron-GmbH)
+[Robotron](https://github.com/Robotron-GmbH)
 
 Roy Anwar
 
