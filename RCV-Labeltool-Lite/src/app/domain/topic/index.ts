@@ -1,7 +1,0 @@
-export * from './models/topic-hierarchy-item'
-export * from './models/topic-tree-node'
-export * from './services/topic-hierarchy.service'
-export * from './store/topic.actions'
-export * from './store/topic.model'
-export * from './store/topic.state'
-export * from './topic-domain.module'

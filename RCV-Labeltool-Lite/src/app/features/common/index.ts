@@ -1,5 +1,0 @@
-export * from './common.module'
-export * from './components/confirm-modal/confirm-modal.component'
-export * from './models/hierarchy/hierarchy-item.interface'
-export * from './models/mat-tree/flat-tree-model'
-export * from './models/mat-tree/flat-tree-node.interface'

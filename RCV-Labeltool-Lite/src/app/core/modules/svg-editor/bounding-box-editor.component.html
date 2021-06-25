@@ -1,9 +1,0 @@
-<div #pane class="pane-container" [class.selected]="selectEditor">
-  <div
-    class="mat-elevation-z2 label-options"
-    [class.hidden]="!selectedLabel || !selectedLabel.isVisible || working"
-    [ngStyle]="labelOptionsPosition()"
-  >
-    <ng-content></ng-content>
-  </div>
-</div>

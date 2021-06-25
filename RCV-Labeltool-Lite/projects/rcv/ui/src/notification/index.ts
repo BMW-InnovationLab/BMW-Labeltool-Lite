@@ -1,6 +1,0 @@
-export * from './i18n/de'
-export * from './models/button-label.enum'
-export * from './models/message-box-action-button.interface'
-export * from './models/message-box-params.interface'
-export * from './notification.module'
-export * from './notification.service'

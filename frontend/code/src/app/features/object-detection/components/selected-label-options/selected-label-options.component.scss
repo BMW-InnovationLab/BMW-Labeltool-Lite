@@ -1,0 +1,17 @@
+.label-select {
+  top: 8px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 0.2em;
+
+  > * {
+    flex: 1;
+    min-width: 1em;
+  }
+}

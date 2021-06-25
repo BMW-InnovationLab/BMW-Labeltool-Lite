@@ -1,0 +1,68 @@
+<div class="flex">
+  <form [formGroup]="form" (ngSubmit)="addSuggest(form)">
+    <mat-card class="form-card mat-elevation-z0 flex-auto">
+      <div class="form-content-wrapper">
+        <rcv-model-suggest-form
+          #embeddedSuggestForm
+          [services]="services"
+          [objectClasses]="objectClasses"
+          (expandModels)="expandModels.emit($event)"
+        >
+        </rcv-model-suggest-form>
+      </div>
+
+      <button type="submit" mat-raised-button [disabled]="form.invalid || embeddedSuggestForm.form?.invalid">
+        <span translate>ACTIONS.ADD</span>
+      </button>
+    </mat-card>
+  </form>
+
+  <mat-card class="mat-elevation-z0 flex-auto">
+    <mat-card-content>
+      <mat-table #table [dataSource]="dataSource">
+        <!-- Service Column -->
+        <ng-container matColumnDef="Service">
+          <mat-header-cell *matHeaderCellDef>Service</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.service.Name }}</mat-cell>
+        </ng-container>
+
+        <!-- Base Model Column -->
+        <ng-container matColumnDef="BaseModel">
+          <mat-header-cell *matHeaderCellDef translate>MULTI_MODEL_SUGGEST.BASE_MODEL</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.model.Name }}</mat-cell>
+        </ng-container>
+
+        <!-- Object class Column -->
+        <ng-container matColumnDef="ObjectClass">
+          <mat-header-cell *matHeaderCellDef translate>MULTI_MODEL_SUGGEST.OBJECT_CLASS</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.objectClass?.Name }}</mat-cell>
+        </ng-container>
+
+        <!-- Remove Column -->
+        <ng-container matColumnDef="Remove">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="removeSuggest(element)"><mat-icon>delete</mat-icon></button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      </mat-table>
+    </mat-card-content>
+
+    <ng-container *ngIf="!dataSource.length; else: showSuggest">
+      <p class="caption" translate>Please add some models</p>
+    </ng-container>
+
+    <ng-template #showSuggest>
+      <rcv-image-count-select [formControl]="imageCountControl"></rcv-image-count-select>
+    </ng-template>
+  </mat-card>
+</div>
+<div class="actions" mat-dialog-actions>
+  <button mat-button color="primary" mat-dialog-close><span translate>ACTIONS.CANCEL</span></button>
+  <button mat-button color="primary" [disabled]="dataSource.length === 0" (click)="suggest()">
+    <span translate>Suggest</span>
+  </button>
+</div>

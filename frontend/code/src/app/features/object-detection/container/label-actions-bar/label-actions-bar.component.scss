@@ -1,0 +1,35 @@
+@import '~@angular/material/theming';
+
+.action-box {
+  position: relative;
+
+  &.-options {
+    display: block;
+    padding-bottom: 0.5em;
+  }
+
+  .optionsrow {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .group-label {
+    font-size: 0.75em;
+    position: absolute;
+    top: 10px;
+  }
+}
+
+.filloption,
+.outlineoption {
+  margin-top: 1.8em;
+}
+
+.outlineoption {
+  display: flex;
+
+  mat-select {
+    margin-left: 0.5em;
+    width: 4em;
+  }
+}

@@ -1,0 +1,43 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-select
+      (selectionChange)="changeService($event)"
+      [compareWith]="selectCompare"
+      [placeholder]="'Select object detection service' | translate"
+      formControlName="service"
+      data-cy="serviceControl"
+    >
+      <mat-option *ngFor="let service of objectDetectionServices$ | async" [value]="service">{{
+        service.Name
+      }}</mat-option>
+    </mat-select>
+    <mat-error translate>Service is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select
+      [compareWith]="selectCompare"
+      [placeholder]="'Select object detection model' | translate"
+      formControlName="model"
+      data-cy="modelControl"
+    >
+      <mat-option *ngFor="let model of objectDetectionModels" [value]="model">{{ model.Name }}</mat-option>
+    </mat-select>
+    <mat-error translate>Model is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="!detectsObjectClasses" class="detect-objectclasses">
+    <mat-select
+      [placeholder]="'Select an object class' | translate"
+      formControlName="objectClass"
+      data-cy="objectclassControl"
+    >
+      <mat-option *ngFor="let objectClass of objectClasses" [value]="objectClass">{{
+        objectClass.Name
+      }}</mat-option>
+    </mat-select>
+    <mat-error translate>Objectclass is required</mat-error>
+  </mat-form-field>
+
+  <ng-content></ng-content>
+</form>

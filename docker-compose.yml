@@ -1,35 +1,41 @@
-version: '3'
+version: "3"
 services:
-
-  rcvlabeltoollitebackend:
+  labeltool-lite-backend:
     build:
-      context: ./RCV-LT-Lite-BE
-      dockerfile: docker/Dockerfile
-    image: rcv.labeltool.lite.backenddddd:latest
-    restart: always
+      context: ./backend
+      dockerfile: ./Dockerfile
+    image: labeltool.lite.backend:latest
+    restart: unless-stopped
     networks:
-      - rcv-lite-net
+      - labeltool-lite-net
     ports:
-      - "19001:80"
+      - "8000:80"
     volumes:
-      # add your mount here or provide a prefilled docker volume
-      - ./training-data:/training-data
-      
-  rcvlabeltoollite:
+      - "./data/training-data:/training-data"
+
+  labeltool-lite-frontend:
     build:
-      context: ./RCV-Labeltool-Lite
-      dockerfile: docker/Dockerfile
-    image: rcv.labeltool.liteeeeeee143244547823:latest
-    restart: always
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    image: labeltool.lite.frontend:latest
+    restart: unless-stopped
     networks:
-      - rcv-lite-net
+      - labeltool-lite-net
     ports:
       - "8081:80"
     depends_on:
-      - rcvlabeltoollitebackend    
+      - labeltool-lite-backend
 
-volumes:
-  rcv-labeltool-lite:      
-
+  labeltool-lite-inference:
+    build:
+      context: ./inference
+      dockerfile: Dockerfile
+    image: labeltool.lite.inferance:latest
+    networks:
+      - labeltool-lite-net
+    volumes:
+      - "./data/inference-data/models:/models"
+      - "./data/inference-data/models_hash:/models_hash"
+      
 networks:
-  rcv-lite-net:
+  labeltool-lite-net:

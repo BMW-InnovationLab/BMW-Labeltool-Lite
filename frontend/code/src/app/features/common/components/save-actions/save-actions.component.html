@@ -1,0 +1,21 @@
+<button
+  mat-mini-fab
+  class="save-button basic-fab"
+  [matTooltip]="saveLabelKey | translate"
+  [disabled]="disabled"
+  (click)="save.emit()"
+  data-cy="save"
+>
+  <mat-icon svgIcon="content-save"></mat-icon>
+</button>
+<button
+  mat-mini-fab
+  [matTooltip]="saveAndNextLabelKey | translate"
+  color="primary"
+  class="save-next"
+  [disabled]="disabled"
+  (click)="saveAndNext.emit()"
+  data-cy="saveAndNext"
+>
+  <mat-icon svgIcon="check"></mat-icon>
+</button>

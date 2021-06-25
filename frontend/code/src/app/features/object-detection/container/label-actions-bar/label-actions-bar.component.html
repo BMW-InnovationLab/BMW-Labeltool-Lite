@@ -1,0 +1,24 @@
+<div class="action-box">
+  <button mat-button class="flex-auto" color="primary" [disabled]="!this.selectedImage" (click)="suggest()">
+    <span translate>LABEL_ACTIONS_BAR.SUGGEST_LABEL</span>
+  </button>
+</div>
+<div *ngIf="objectDetection$ | async as options" class="action-box -options">
+  <label class="group-label light-text" translate>Label settings</label>
+  <div class="optionsrow">
+    <mat-checkbox class="filloption" [checked]="options.fill" (change)="updateFill($event.checked)"
+      ><span translate>LABEL_ACTIONS.FILL</span></mat-checkbox
+    >
+
+    <div class="outlineoption">
+      <label translate>LABEL_ACTIONS.OUTLINE</label>
+      <mat-select
+        [value]="options.strokeWidth"
+        (selectionChange)="updateWidth($event.value)"
+        data-cy="outline"
+      >
+        <mat-option *ngFor="let option of strokeWidths" [value]="option">{{ option }} px</mat-option>
+      </mat-select>
+    </div>
+  </div>
+</div>

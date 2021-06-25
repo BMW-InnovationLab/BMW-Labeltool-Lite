@@ -1,0 +1,19 @@
+{
+  "FilePath": "/Users/esaller/Desktop/LABELTOOL/lt-lite-code/backend/Rcv.Labeltool.Backend/Rcv.LabelTool.Backend.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 800
+  },
+  "RootNamespace": "Rcv.LabelTool.Backend",
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

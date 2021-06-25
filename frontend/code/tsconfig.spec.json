@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "strict": false,
+    "types": ["jest", "hammerjs"],
+    "noImplicitAny": false,
+    "allowJs": true
+  },
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"],
+  "exclude": ["e2e/**/*.spec.ts"]
+}

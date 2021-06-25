@@ -1,0 +1,41 @@
+<rcv-base-dialog [title]="'TOPIC_SELECT_DIALOG.TITLE' | translate" [submitActionAvailable]="false">
+  <mat-nav-list>
+    <mat-tree [dataSource]="topicTree.DataSource" [treeControl]="topicTree.Control">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle (click)="selectTopic(node)">
+        <mat-list-item matTreeNodePadding [class.active]="topicActive(node, data.selectedTopic)">
+          <mat-icon mat-list-icon svgIcon="collections"></mat-icon>
+          {{ node.title }}
+        </mat-list-item>
+      </mat-tree-node>
+
+      <mat-tree-node *matTreeNodeDef="let node; when: isContainer">
+        <mat-list-item
+          mat-icon-button
+          matTreeNodePadding
+          matTreeNodeToggle
+          [attr.aria-label]="'toggle ' + node.title"
+          (click)="selectContainer()"
+        >
+          <mat-icon
+            class="mat-icon-rtl-mirror"
+            mat-list-icon
+            [svgIcon]="topicTree.Control.isExpanded(node) ? 'arrow-down' : 'arrow-right'"
+          ></mat-icon>
+          {{ node.title }}
+        </mat-list-item>
+      </mat-tree-node>
+
+      <mat-tree-node *matTreeNodeDef="let node; when: isItemContainer">
+        <mat-list-item
+          matTreeNodePadding
+          mat-icon-button
+          [class.active]="topicActive(node, data.selectedTopic)"
+          (click)="selectTopic(node)"
+        >
+          <mat-icon mat-list-icon>collections</mat-icon>
+          <div class="title">{{ node.title }}</div>
+        </mat-list-item>
+      </mat-tree-node>
+    </mat-tree>
+  </mat-nav-list>
+</rcv-base-dialog>

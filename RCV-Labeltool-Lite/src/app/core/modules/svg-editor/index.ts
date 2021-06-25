@@ -1,5 +1,0 @@
-export * from './bounding-box-editor.component'
-export * from './bounding-box-editor.module'
-export * from './models/element-data.interface'
-export * from './models/point.interface'
-export * from './models/svg-drawing-mode.enum'

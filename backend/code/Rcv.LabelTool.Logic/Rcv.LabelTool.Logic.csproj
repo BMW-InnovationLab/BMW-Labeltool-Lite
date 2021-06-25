@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <NoWarn>0612;0618</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Coravel" Version="4.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExternalLibraries\RCV-FileUtils\Rcv.FileUtils\Rcv.FileUtils.csproj" />
+    <ProjectReference Include="..\ExternalLibraries\RCV-Imagine\Robotron.Imagine\Robotron.Imagine.csproj" />
+    <ProjectReference Include="..\Rcv.Labeltool.Contracts\Rcv.LabelTool.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+:host {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.selected-thumbnail {
+  border: 5px solid #ff0;
+}
+
+.image-container {
+  cursor: pointer;
+  text-align: center;
+
+  mat-progress-spinner,
+  img {
+    box-sizing: border-box;
+    max-height: 170px;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,20 @@
+<rcv-base-dialog
+  [title]="'SUGGEST_RESULT.TITLE' | translate"
+  [submitActionAvailable]="false"
+  cancelActionLabel="Ok"
+>
+  <p class="item">
+    <label translate>SUGGEST_RESULT.LABELS_FOUND</label> <span>{{ data.LabelsFound }}</span>
+  </p>
+  <p class="item">
+    <label translate>SUGGEST_RESULT.IMAGES_PROCESSED</label> <span>{{ data.ProcessedImages }}</span>
+  </p>
+
+  <h4 class="statistic-header" translate>SUGGEST_RESULT.OBJECTCLASS_STATISTIC</h4>
+  <p class="item" *ngFor="let objectClass of data.ObjectClassStatistic">
+    <label>{{ objectClassName(objectClass.Id) | async }}</label> <span>{{ objectClass.Quantity }}</span>
+  </p>
+  <p class="light-text" *ngIf="data.ObjectClassStatistic.length === 0" translate>
+    SUGGEST_RESULT.NO_OBJECTCLASS_STATISTIC
+  </p>
+</rcv-base-dialog>

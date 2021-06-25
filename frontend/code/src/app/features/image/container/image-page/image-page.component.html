@@ -1,0 +1,50 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    class="sidenav main-sidenav mat-elevation-z2"
+    mode="side"
+    [disableClose]="true"
+    [opened]="true"
+  >
+    <rcv-image-sidenav></rcv-image-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav
+    #labelSidenav
+    mode="side"
+    position="end"
+    class="sidenav mat-elevation-z2"
+    [opened]="true"
+    (openedChange)="this.onResize()"
+  >
+    <button class="side-nav-toggle" mat-icon-button (click)="labelSidenav.toggle()">
+      <mat-icon [svgIcon]="labelSidenav.opened ? 'chevron-right' : 'chevron-left'"></mat-icon>
+    </button>
+    <router-outlet name="list"></router-outlet>
+  </mat-sidenav>
+
+  <mat-sidenav-content style="overflow: hidden;">
+    <div #container class="container-fluid" [style.margin-right.px]="labelSidenav.opened ? 0 : 60">
+      <mat-progress-spinner
+        color="accent"
+        [class.hidden]="imageReady$ | async"
+        mode="indeterminate"
+      ></mat-progress-spinner>
+      <div
+        *ngIf="image$ | async; else noImage"
+        class="image-container"
+        [class.loading]="!(imageReady$ | async)"
+      >
+        <img
+          #image
+          *ngIf="brightness$ | async as brightness"
+          class="main-image mat-elevation-z6"
+          [src]="imageUrl$ | async"
+          (load)="imageLoaded($event)"
+          [ngStyle]="imageStyle(brightness)"
+        />
+        <div #editor class="editor-container"><router-outlet></router-outlet></div>
+      </div>
+      <ng-template #noImage><div class="light-text no-image" translate>No image available</div></ng-template>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

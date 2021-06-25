@@ -1,0 +1,10 @@
+<div class="image-container" (click)="navigateToIndex.emit(thumbnail.index)">
+  <ng-container *ngIf="startLoadingImage || thumbnail.thumbnailUrl">
+    <mat-progress-spinner *ngIf="!thumbnail.thumbnailUrl" mode="indeterminate"></mat-progress-spinner>
+    <img
+      *ngIf="thumbnail.thumbnailUrl"
+      [class.selected-thumbnail]="thumbnail.index === selectedIndex"
+      [src]="thumbnailUrl(thumbnail.thumbnailUrl)"
+    />
+  </ng-container>
+</div>

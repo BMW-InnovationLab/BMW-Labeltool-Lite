@@ -1,0 +1,13 @@
+@mixin circle-chart($theme) {
+  $primary: map-get($theme, primary);
+
+  .circle-chart {
+    circle {
+      stroke: mat-color($primary);
+    }
+
+    text {
+      fill: mat-color($primary);
+    }
+  }
+}

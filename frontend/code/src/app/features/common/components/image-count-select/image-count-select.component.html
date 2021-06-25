@@ -1,0 +1,7 @@
+<mat-form-field>
+  <mat-select [(value)]="value" [placeholder]="'Image count' | translate" required>
+    <mat-option *ngFor="let count of counts" [value]="count">
+      {{ count === 0 ? ('All pictures' | translate) : count }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

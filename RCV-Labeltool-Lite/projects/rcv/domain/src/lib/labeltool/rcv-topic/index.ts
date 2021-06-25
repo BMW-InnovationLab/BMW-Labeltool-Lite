@@ -1,6 +1,0 @@
-export * from './hierarchy/rcv-topic-hierarchy.service'
-export * from './hierarchy/rcv-topic.hierarchy-item'
-export * from './rcv-topic.interface'
-export * from './rcv-topic.module'
-export * from './repository/abstract.rcv-topic.repository'
-export * from './repository/mock.rcv-topic.repository'

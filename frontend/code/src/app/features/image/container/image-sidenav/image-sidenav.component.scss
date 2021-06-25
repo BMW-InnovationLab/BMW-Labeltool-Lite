@@ -1,0 +1,123 @@
+@import '~@angular/material/theming';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header {
+  height: 128px;
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+}
+
+.sidenav {
+  overflow: auto;
+  width: 250px;
+}
+
+button {
+  box-shadow: none !important;
+}
+
+.link {
+  flex: 1;
+
+  mat-icon {
+    height: 30px;
+    margin: 18px auto;
+    width: 30px;
+  }
+}
+
+mat-form-field {
+  flex: 1;
+  position: relative;
+  top: 8px;
+}
+
+.topic-select > button {
+  width: 100%;
+}
+
+rcv-image-navigation {
+  flex: 1;
+}
+
+.bottom-actions {
+  display: flex;
+  padding: 0;
+
+  .bottom-action {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 66.5px;
+    justify-content: space-around;
+    padding: 0 0.5em;
+
+    &.shrink {
+      flex-basis: auto;
+      flex-grow: 0;
+    }
+  }
+
+  button {
+    box-shadow: none !important;
+  }
+}
+
+.image-options {
+  justify-content: space-between;
+  padding: 0 0.5em;
+
+  .option-entry {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .optionlabel {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .optionvalue-container {
+    display: inline-block;
+    min-width: 45px;
+    text-align: center;
+  }
+
+  .optionvalue {
+    display: inline-block;
+  }
+}
+
+.image-actions {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.help-box {
+  align-items: flex-end;
+  display: flex;
+  flex: 1;
+  margin: 0 1em;
+  min-height: 50px;
+}
+
+router-outlet {
+  display: none;
+}
+
+.ci-logo {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 160px !important;
+  width: 100%;
+}

@@ -1,0 +1,10 @@
+<div #pane class="pane-container" [class.selected]="selectEditor">
+  <div
+    #labelOptions
+    class="mat-elevation-z2 label-options"
+    [class.hidden]="hideLabelOptions$ | async"
+    [ngStyle]="labelOptionsPosition$ | async"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

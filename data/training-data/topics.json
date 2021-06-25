@@ -1,0 +1,16 @@
+[
+    {
+        "Id": 0,
+        "Name": "factory",
+        "FolderPath": "factory-data",
+        "Path": null,
+        "ImageTransformations": null
+    },
+    {
+        "Id": 2,
+        "Name": "anon",
+        "FolderPath": "anon-data",
+        "Path": null,
+        "ImageTransformations": null
+    }
+]

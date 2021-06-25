@@ -1,0 +1,12 @@
+aiofiles
+celery
+fastapi
+gunicorn==20.0.4
+jsonschema
+numpy
+opencv-python>=4.0.0.0
+Pillow
+python-multipart
+python-socketio
+requests
+uvicorn==0.11.5

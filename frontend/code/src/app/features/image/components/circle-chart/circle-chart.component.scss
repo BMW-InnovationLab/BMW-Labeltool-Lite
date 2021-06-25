@@ -1,0 +1,14 @@
+svg {
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: transparent;
+  stroke-width: 1%;
+  transform-origin: center;
+}
+
+text {
+  font-size: 30px;
+  transform: rotate(90deg);
+}

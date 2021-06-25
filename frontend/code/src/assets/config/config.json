@@ -1,0 +1,6 @@
+{
+  "vendors": "bmw",
+  "apiUrl": "http://localhost:8000/api",
+  "isUploadButtonVisible": true,
+  "isDeleteButtonVisible": true
+}

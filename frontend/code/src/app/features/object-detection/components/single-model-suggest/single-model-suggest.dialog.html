@@ -1,0 +1,26 @@
+<form [formGroup]="singleForm" (ngSubmit)="submit(singleForm)">
+  <mat-card class="suggest-card">
+    <div class="form-content-wrapper">
+      <rcv-model-suggest-form
+        #suggestForm
+        [form]="form"
+        [services]="services"
+        [objectClasses]="objectClasses"
+        (expandModels)="expandModels.emit($event)"
+      >
+        <rcv-image-count-select formControlName="imageCount"></rcv-image-count-select>
+      </rcv-model-suggest-form>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button color="primary" mat-dialog-close><span translate>ACTIONS.CANCEL</span></button>
+      <button
+        mat-button
+        color="primary"
+        [disabled]="singleForm.invalid || suggestForm.form.invalid"
+        cdkFocusInitial
+      >
+        <span translate>Suggest</span>
+      </button>
+    </div>
+  </mat-card>
+</form>

@@ -1,0 +1,13 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    font-weight: bold;
+    margin-right: 1em;
+  }
+}
+
+.statistic-header {
+  margin-top: 2em;
+}

@@ -1,14 +1,16 @@
-## Labeling Tool lite
+## LabelTool lite
 
 ---
 
-This repository provides you with a labeling tool with little to no configuration needed! The Tool was reduced in its functional scope to the most necessary. You can start labeling your images for State-of-the-art Deep Learning training purposes right away with our Dockerized labeling tool. You can also directly use the labels provided by the LabelingTool to train with our Yolov4 and Tensorflow Training GUI repositories:
+This repository provides you with a image data annotation tool with little to no configuration needed! The lite version of the tool focuses on bounding box based training data annotation. You can start labeling your images for state-of-the-art deep learning training purposes right away with our dockerized _LabelTool lite_. You can also directly use the labels provided by the _LabelTool lite_ to train with our Yolov4 and Tensorflow Training GUI repositories:
 
-[https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI](https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI)
+[BMW-TensorFlow-Training-GUI](https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI)
 
-[https://github.com/BMW-InnovationLab/BMW-YOLOv4-Training-Automation](https://github.com/BMW-InnovationLab/BMW-YOLOv4-Training-Automation)
+[BMW-YOLOv4-Training-Automation](https://github.com/BMW-InnovationLab/BMW-YOLOv4-Training-Automation)
 
-<img src="./screenshots/lastgif.gif">
+Additionally, it is possible to connect a pre-trained or a custom-trained model to the _LabelTool lite_. This functionality allows one to accelerate the labeling process whereby the connected model can be actively used to suggest appropriate labels for each image. 
+
+<img src="./data/repo-data/Intro.gif"  >
 
 ## Prerequisites
 
@@ -16,68 +18,65 @@ This repository provides you with a labeling tool with little to no configuratio
 
 - Docker and Docker-compose
 
-##### Installing Prerequisites:
-
-**To verify that you have docker and docker-compose,open a terminal and use the following commands:**
-
--Verify docker:
-
-```bash
-docker --version
-```
-
--Verify docker-compose:
-
-```bash
-docker-compose --version
-```
-
-**If you do have docker and docker-compose on your machine skip to "Getting Started", otherwise follow the steps below:**
-
-- **For Windows:**
-
-Go to [https://hub.docker.com/editions/community/docker-ce-desktop-windows/](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) and download the stable version of docker (docker-compose will be automatically installed with docker)
-
 **PS: You may need to increase the shared memory docker is using**
 
-- **For Ubuntu:**
+## Running the _LabelTool lite_:
 
--if you don't have neither docker nor docker-compose, open a Terminal, go to your project's repository, use the following command :
+We provide a sample dataset in case you don't have your own custom dataset.
 
-```bash
-chmod +x install_full.sh && source install_full.sh
-```
-
--if you have docker and wish to only install docker-compose, open a terminal, go to your project's repository, then use the following command inside your project's repository:
-
-```bash
-chmod +x install_compose.sh && source install_compose.sh
-```
-
-- **For Mac:**
-
--Go to [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/) and follow the documentation to download and install docker and docker-compose together !
-
-## Running the labeling tool:
-
-We provide a sample_dataset in case you don't have your own custom dataset.
-
-- To run the labeling tool and start labeling, simply go to your projects repository and run the command below:
+- To run the LabelTool lite and start labeling, simply go to your projects repository and run the command below:
 
 ```bash
 docker-compose up
 ```
 
-- Open any browser,go to localhost:8081 and start labeling !
+- Open any browser,  go to localhost:8081 and start labeling!
 
-    <img src="./screenshots/screenshot.png" >
+    <img src="./data/repo-data/Labeltool.png"  >
+
+## Navigation options in LabelTool lite
+
+- The _LabelTool lite_ offers different options that facilitates you to comfortably navigate through the data set whilst labeling:
+
+  - Navigate to the next image in the data set - ">"
+  - Navigate to the previous image in the data set - "<"
+  - Navigate to the next image that has no bounding boxes - ">>"
+  - Navigate to the previous image that has no bounding boxes - "<<"
+  - Navigate to a particular image by inputting the image number directly
+  - Navigate to any image by clicking or dragging the cursor on the scroll line
+
+  <img src="./data/repo-data/Navigation.gif"  >
+
+
+- In addition to the above mentioned features, the _LabelTool lite_ offers: 
+
+  - Zoom-in and zoom-out functionality for the images
+  - Increase and decrease of brightness for the images
+  - New images (one at a time) can be uploaded to the data set from your local computer via the Upload button
+  - Image attributes (name and resolution) can be displayed for each image 
+  - Images (one at a time) and the corresponding bounding boxes can be deleted 
+
+  <img src="./data/repo-data/Features.gif" >
+
+## Bounding box features
+
+- The LabelTool lite offers a variety of functionalities for bounding box creation
+
+  - The bounding boxes can be resized after creation 
+  - The bounding boxes can be moved via drag and drop
+  - The bounding boxes can be copied 
+  - The bounding boxes can be set to Fill or Unfill 
+  - The line thickness of the bounding boxes can be changed
+  
+  
+  <img src="./data/repo-data/BBoxes.gif"  >
 
 ## Preparing your custom dataset:
 
 In your project's repository, this is how the training-data folder structure should look like after preparing your dataset (follow steps below):
 
 ```shell
-│──training-data
+│──/data/training-data
   │──myfirstdataset
   │  │──images
   │  │──labels
@@ -94,18 +93,17 @@ In your project's repository, this is how the training-data folder structure sho
 
 - Let's say that the topics.json file that is inside training-data currently looks like this:
 
-  <img src="./screenshots/Capture.PNG"  height="352">
+  <img src="./data/repo-data/Capture.PNG"  height="352">
 
   please add the following to your topics.json file just above the "]":
 
 ```json
   ,
   {
-      "Id": 2,
+      "Id": 3,
       "Name": "myfirstdataset",
       "FolderPath": "myfirstdataset",
-      "Path": null,
-      "ImageTransformations": null
+      "Path": null
   }
 ```
 
@@ -113,7 +111,7 @@ In your project's repository, this is how the training-data folder structure sho
 
 After finishing , your topics.json file should look like this :
 
-  <img src="./screenshots/Capture1.PNG" height="480">
+  <img src="./data/repo-data/Capture1.PNG" height="480">
 
 - Inside your "myfirstdataset" folder :
 
@@ -138,14 +136,14 @@ After finishing , your topics.json file should look like this :
     ]
     ```
 
-### Running the labeling tool:
+### Running the LabelTool lite:
 
 - Open the docker-compose.yml file in your project's repository.
-- The labeling tool runs on localhost:8081, if you want to change the port , replace 8081 in "**ports**" under "**rcvlabeltoollite**" by the port number that you want
+- The LabelTool lite runs on localhost:8081, if you want to change the port , replace 8081 in "**ports**" under "**labeltool-lite-frontend**" with the port number that you want
 
 - Under "**volumes**" replace what's written before the ":" with your training-data folder absolute path. For Windows users, replace the "\\" in the path with "\\\\". (check the example below)
 
-  <img src="./screenshots/Capture3.png" height="540">
+  <img src="./data/repo-data/Capture2.png" height="540">
 
 - Open a Terminal , go to your project's repository , and run the command below :
 
@@ -153,25 +151,23 @@ After finishing , your topics.json file should look like this :
   docker-compose up
   ```
 
-- go to localhost:**Chosen_port** , choose your topic and start labeling
-
-<img src="./screenshots/secondgif.gif" >
+- go to localhost: **chosen_port** , choose your topic and start labeling
 
 ## Training with our Tensorflow Gui
 
 To use the generated labels with our tensorflow gui follow the steps below :
 
-- Make sure you downloaded our [Tensorflow](https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI) project.
+- Make sure you downloaded our [BMW-TensorFlow-Training-GUI](https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI) project.
 
 - Go to training-data/
 
 - Copy your dataset folder
 
-- Go to our Tensorflow Gui project's repository
+- Go to our [BMW-TensorFlow-Training-GUI](https://github.com/BMW-InnovationLab/BMW-TensorFlow-Training-GUI) project's repository
 
 - Go to "datasets" and paste the copied folder
 
-**Follow the instructions on our Tensorflow Gui Github repository to launch it and train**
+**Follow the instructions on our Tensorflow Gui Github repository to launch and train it**
 
 ## Training with our Yolov4 and Yolov3-Training-Automation
 
@@ -195,13 +191,27 @@ A new folder "yolo" is created inside your dataset's "labels" folder.
 
 - Please note that a "train_config.json" file should be created inside your dataset's folder (Check our Yolov4-v3 Training Automation documentation). You can just copy the file from our sample_dataset and edit the classes field ( Check image below)
 
- <img src="./screenshots/Capture4.gif" height="750">
+ <img src="./data/repo-data/Capture4.gif"  height=400 >
 
 **Follow the instructions on our Yolov4-v3 Training Automation Github repository to launch it and train**
 
-## Known Errors
+## Accelerate image annotation with a pre-trained model
 
--All JSON files, except the label files, within the Labeltool should be encoded in "UTF-16 LE", otherwise an error may occur.
+Connect a trained model to the Labeltool GUI and accelerate the labeling process. 
+
+  <img src="./data/repo-data/Suggest.gif" >
+
+To connect the model container to the Labeltool, modify the docker-compose.yml file to include it and re-build all the applications together. An example of how one should modify the docker-compose.yml file is shown below:
+
+ <img src="./data/repo-data/Capture5.png" >
+
+
+## Known Issues
+
+-Only one model can be connected to the "Suggest bounding boxes" menu. If the Object classes in the connected model does not match the ones in the data set, no results or error messages will be displayed. When the "Suggest bounding boxes" does not deliver any response, please check the log files of the container and as well as the consistency of the Object classes between model and Topic. 
+
+-All JSON files should be encoded in "UTF-8", otherwise an error may occur.
+
 
 ## Acknowledgements
 
@@ -211,4 +221,4 @@ A new folder "yolo" is created inside your dataset's "labels" folder.
 
 Roy Anwar
 
-Eduard Saller
+[Eduard Saller](https://www.saller.io)

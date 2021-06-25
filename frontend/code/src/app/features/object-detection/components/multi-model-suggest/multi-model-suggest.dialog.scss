@@ -1,0 +1,33 @@
+@import '~@angular/material/theming';
+
+mat-card {
+  padding-bottom: 0;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.form-card {
+  border-right: solid 1px $dark-dividers;
+  box-sizing: border-box;
+  width: 350px;
+}
+
+.form-content-wrapper {
+  min-height: 300px;
+}
+
+.times-label {
+  display: block;
+  margin-bottom: -0.6em;
+  margin-top: 1em;
+}
+
+mat-form-field ::ng-deep .mat-form-field-wrapper {
+  width: 100%;
+}
+
+.actions {
+  margin-bottom: 0;
+}

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Robotron.Imagine", "Robotron.Imagine\Robotron.Imagine.csproj", "{DD6C564F-90DB-4E77-A707-8C1C0BBC671A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD6C564F-90DB-4E77-A707-8C1C0BBC671A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6C564F-90DB-4E77-A707-8C1C0BBC671A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6C564F-90DB-4E77-A707-8C1C0BBC671A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6C564F-90DB-4E77-A707-8C1C0BBC671A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82256B7F-518F-4F1B-A5CD-5573753336C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82256B7F-518F-4F1B-A5CD-5573753336C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82256B7F-518F-4F1B-A5CD-5573753336C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82256B7F-518F-4F1B-A5CD-5573753336C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {533AE0AB-2674-4C0C-ABCE-55F9D808260D}
+	EndGlobalSection
+EndGlobal

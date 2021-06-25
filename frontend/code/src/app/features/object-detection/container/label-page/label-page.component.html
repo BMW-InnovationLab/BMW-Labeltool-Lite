@@ -1,0 +1,29 @@
+<ng-container *ngIf="image; else noImage">
+  <rcv-bounding-box-editor
+    #editor
+    [hoveredLabel]="hoveredLabel$ | async"
+    [labels]="labels$ | async"
+    [objectClasses]="objectclasses$ | async"
+    [selectedLabel]="selectedLabel$ | async"
+    [selectedObjectClass]="selectedObjectClass"
+    [size]="size"
+    [options]="{ catchBoxClicks: true, fillBox: fill$ | async, strokeWidth: strokeWidth$ | async }"
+    [spatialDrawing]="isSpatialDrawing$ | async"
+    (hovered)="hoverLabel($event)"
+    (selected)="selectLabel($event)"
+    (elementAdded)="elementAdded($event)"
+    (elementChanged)="elementChanged($event)"
+    (elementRemoved)="elementRemoved($event)"
+  >
+    <rcv-selected-label-options
+      [objectClasses]="objectclasses$ | async"
+      [selectedLabel]="selectedLabel$ | async"
+      [enableDistance]="(selectedTopic$ | async).HasDepth"
+      [enableTrackId]="(selectedTopic$ | async).HasTrackingId"
+      (selectObjectClass)="selectObjectClass($event)"
+      (updateLabel)="elementChanged($event)"
+    ></rcv-selected-label-options>
+  </rcv-bounding-box-editor>
+</ng-container>
+
+<ng-template #noImage><p class="no-image" translate>No image available</p></ng-template>

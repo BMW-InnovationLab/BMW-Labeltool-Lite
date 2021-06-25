@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+@import 'styles';
+
+@include mat-core();
+
+// palettes
+$mat-bmw: map-merge(
+  $mat-indigo,
+  (
+    100: #b2cce7,
+    400: #1c69d4,
+    500: #0653b6,
+    700: #002c85,
+  )
+);
+$mat-bmw-warn: map-merge(
+  $mat-red,
+  (
+    500: #d20000,
+  )
+);
+
+// setup themes
+$theme-primary: mat-palette($mat-bmw);
+$theme-warn: mat-palette($mat-bmw-warn);
+
+$theme: mat-light-theme($theme-primary, $theme-primary, $theme-warn);
+
+// apply theme
+@include angular-material-theme($theme);
+@include basic-fab-button($theme);
+@include custom-mat-list-theme($theme);
+@include custom-mat-tree-theme($theme);
+@include loading-overlay($theme);
+@include mat-snack-bar-error-theme($theme-warn);
+@include toggle-button($theme);
+@include circle-chart($theme);
+
+.ci-logo {
+  background-image: url('/assets/themes/bmw/images/logo.png');
+}

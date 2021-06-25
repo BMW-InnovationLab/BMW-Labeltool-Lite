@@ -1,0 +1,41 @@
+version: '3'
+services:
+
+  inference:
+    build:
+     context: ./inference
+     dockerfile: Dockerfile
+    networks:
+      - labeltool-net
+    volumes:
+      - "./inference/models:/models"
+      - "./inference/models_hash:/models_hash"
+      
+  labeltoollitebackend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: labeltool.lite.backend:latest
+    restart: always
+    networks:
+      - labeltool-net
+    volumes:
+      - "./data:/training-data"
+    depends_on:
+      - inference
+
+  labeltoollite:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: labeltool.lite:latest
+    restart: always
+    networks:
+      - labeltool-net    
+    ports:
+      - "8000:80"
+    depends_on:
+      - labeltoollitebackend  
+      
+networks:
+  labeltool-net:

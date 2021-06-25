@@ -1,0 +1,74 @@
+<ng-container *ngIf="imageResponse; else noImages">
+  <div class="image-pagination">
+    <button
+      mat-icon-button
+      class="-small"
+      [matTooltip]="this.previousBlankTooltip | async"
+      (click)="previousBlank()"
+      [disabled]="!hasPreviousBlank"
+    >
+      <mat-icon svgIcon="chevron-double-left"></mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="-small"
+      [matTooltip]="'IMAGE_NAVIGATION.PREVIOUS_IMAGE' | translate"
+      (click)="previous()"
+      [disabled]="!hasPrevious"
+      data-cy="previous"
+    >
+      <mat-icon svgIcon="chevron-left"></mat-icon>
+    </button>
+
+    <span class="image-index">
+      <input
+        #countInput
+        type="number"
+        matInput
+        [value]="image.Index + 1"
+        (keyup.enter)="updateIndex(countInput)"
+        (blur)="updateIndex(countInput)"
+      />
+      | <span class="count">{{ count }}</span>
+    </span>
+
+    <button
+      mat-icon-button
+      class="-small"
+      [matTooltip]="'IMAGE_NAVIGATION.NEXT_IMAGE' | translate"
+      (click)="next()"
+      [disabled]="!hasNext"
+      data-cy="next"
+    >
+      <mat-icon svgIcon="chevron-right"></mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="-small"
+      [matTooltip]="this.nextBlankTooltip | async"
+      (click)="nextBlank()"
+      [disabled]="!hasNextBlank"
+    >
+      <mat-icon svgIcon="chevron-double-right"></mat-icon>
+    </button>
+  </div>
+
+  <div class="slider-container">
+    <mat-slider
+      #imageSlider
+      class="flex-auto"
+      [max]="count"
+      min="1"
+      step="1"
+      [thumbLabel]="true"
+      tickInterval="auto"
+      color="primary"
+      [value]="image.Index + 1"
+      (change)="changeImage(imageSlider)"
+    >
+    </mat-slider>
+  </div>
+</ng-container>
+<ng-template #noImages
+  ><div class="light-text no-images" translate>IMAGE_NAVIGATION.NO_IMAGES_AVAILABLE</div></ng-template
+>

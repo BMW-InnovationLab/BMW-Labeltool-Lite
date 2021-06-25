@@ -1,0 +1,41 @@
+<mat-form-field class="label-select">
+  <mat-select
+    [value]="selectedLabel?.ObjectClassId"
+    (selectionChange)="changeObjectClassOfLabel($event)"
+    [placeholder]="'Select object class' | translate"
+    required
+  >
+    <mat-option *ngFor="let objectClass of objectClasses" [value]="objectClass.Id">
+      {{ objectClass.Name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngIf="enableDistance || enableTrackId" class="row">
+  <mat-form-field *ngIf="enableTrackId">
+    <input
+      type="number"
+      matInput
+      [placeholder]="'LABELS.TRACK_ID' | translate"
+      [formControl]="trackId"
+      (change)="changeTrackId($event.target.value)"
+    />
+    <mat-error>{{ 'ERRORS.INVALID_INPUT' | translate }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="enableDistance">
+    <input
+      class="distance"
+      type="text"
+      digitOnly
+      decimal="true"
+      [decimalSeparator]="getDecimalSeparator()"
+      matInput
+      [placeholder]="'LABELS.DISTANCE' | translate"
+      [formControl]="distance"
+      (change)="changeDistance($event.target.value)"
+    />
+    <span matSuffix>m</span>
+    <mat-error>{{ 'ERRORS.INVALID_INPUT' | translate }}</mat-error>
+  </mat-form-field>
+</div>

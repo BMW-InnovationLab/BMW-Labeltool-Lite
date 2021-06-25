@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "inference_engine_name": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "predictions": {
+      "type": "number",
+      "minimum": 0
+    },
+    "number_of_classes": {
+      "type": "number"
+    },
+    "framework": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "network": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "inference_engine_name",
+    "confidence",
+    "predictions",
+    "number_of_classes",
+    "framework",
+    "type",
+    "network"
+  ]
+}

@@ -1,9 +1,0 @@
-{
-  "name": "@rcv/domain",
-  "version": "0.0.26",
-  "peerDependencies": {
-    "@angular/common": "~7",
-    "@angular/core": "~7",
-    "@rcv/common": "^0.0.4"
-  }
-}

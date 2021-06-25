@@ -1,0 +1,121 @@
+<mat-toolbar class="header" role="header">
+  <div class="ci-logo"></div>
+</mat-toolbar>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row> <h2 class="title">LabelTool</h2></mat-toolbar-row>
+</mat-toolbar>
+
+<div class="action-box topic-select">
+  <button
+    mat-button
+    color="primary"
+    (click)="selectTopic()"
+    [matTooltip]="'IMAGE_SIDENAV.SELECT_TOPIC' | translate"
+    data-cy="selectTopic"
+  >
+    <div class="truncate">{{ topic?.Name }}</div>
+  </button>
+</div>
+
+<div class="action-box"><rcv-image-navigation></rcv-image-navigation></div>
+
+<router-outlet name="actions"></router-outlet>
+
+<div class="action-box image-options">
+  <div class="option-entry" *ngIf="zoom$ | async as zoom">
+    <div class="optionlabel light-text" translate>IMAGE_SIDENAV.ZOOM</div>
+    <div>
+      <button
+        mat-icon-button
+        [matTooltip]="'Zoom out' | translate"
+        (click)="decreaseZoom(zoom)"
+        data-cy="zoomout"
+      >
+        <mat-icon svgIcon="remove"></mat-icon>
+      </button>
+      <span class="optionvalue" data-cy="zoomvalue">{{ zoom | percent }}</span>
+      <button
+        mat-icon-button
+        [matTooltip]="'Zoom in' | translate"
+        (click)="increaseZoom(zoom)"
+        data-cy="zoomin"
+      >
+        <mat-icon svgIcon="add"></mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="option-entry" *ngIf="brightness$ | async as brightness">
+    <div class="optionlabel light-text" translate>IMAGE_SIDENAV.BRIGHTNESS</div>
+    <div>
+      <button
+        mat-icon-button
+        [matTooltip]="'IMAGE_SIDENAV.DECREASE_BRIGHTNESS' | translate"
+        (click)="decreaseBrightness(brightness)"
+        data-cy="brightnessdown"
+      >
+        <mat-icon svgIcon="remove"></mat-icon>
+      </button>
+      <div class="optionvalue-container">
+        <span class="optionvalue" data-cy="brightnessvalue">{{ brightness | percent }}</span>
+      </div>
+      <button
+        mat-icon-button
+        [matTooltip]="'IMAGE_SIDENAV.INCREASE_BRIGHTNESS' | translate"
+        (click)="increaseBrightness(brightness)"
+        data-cy="brightnessup"
+      >
+        <mat-icon svgIcon="add"></mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="action-box bottom-actions">
+  <div class="bottom-action">
+    <rcv-file-upload
+      #uploader
+      (filesChanged)="uploadImages($event)"
+      [isMultiple]="false"
+      *ngIf="buttonUpload"
+    >
+      <button
+        mat-mini-fab
+        class="basic-fab"
+        [matTooltip]="'Upload image' | translate"
+        (click)="uploader.openFile()"
+      >
+        <mat-icon svgIcon="upload"></mat-icon>
+      </button>
+    </rcv-file-upload>
+    <button
+      mat-mini-fab
+      class="basic-fab"
+      [matTooltip]="'IMAGE_SIDENAV.IMAGE_ATTRIBUTES_TOOLTIP' | translate"
+      [disabled]="!image"
+      (click)="showImageData()"
+    >
+      <mat-icon svgIcon="info"></mat-icon>
+    </button>
+    <button
+      *ngIf="buttonDelete"
+      mat-mini-fab
+      class="basic-fab"
+      [matTooltip]="'Delete current image with all labels' | translate"
+      [disabled]="!image"
+      (click)="removeImage()"
+    >
+      <mat-icon svgIcon="delete"></mat-icon>
+    </button>
+
+    <router-outlet name="save-actions"></router-outlet>
+  </div>
+</div>
+
+<div class="help-box">
+  <div class="flex flex-auto items-center justify-between">
+    <button mat-icon-button [matTooltip]="'Show help for labeltool' | translate" (click)="showHelp()">
+      <mat-icon svgIcon="help-circle"></mat-icon>
+    </button>
+  </div>
+</div>

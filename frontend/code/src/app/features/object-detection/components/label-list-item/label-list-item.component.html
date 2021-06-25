@@ -1,0 +1,37 @@
+<div class="label-list-item light-text flex items-center" [ngClass]="{ 'disabled-text': !label.isVisible }">
+  <rcv-confirm-button
+    [confirmText]="'Remove label?' | translate"
+    [tooltip]="'Remove label' | translate"
+    (remove)="remove.emit(label)"
+  >
+    <div class="flex items-center">
+      <button
+        mat-icon-button
+        class="btn-visible-toggle -small"
+        (click)="toggle.emit(label)"
+        [matTooltip]="
+          label.isVisible ? ('ACTIONS.HIDE_LABEL' | translate) : ('ACTIONS.SHOW_LABEL' | translate)
+        "
+        matTooltipPosition="left"
+        data-cy="hideLabel"
+      >
+        <mat-icon [svgIcon]="label.isVisible ? 'eye' : 'eye-off'"></mat-icon>
+      </button>
+      <div class="label-data">
+        <p class="dataitem" data-cy="positions">
+          <span> <b>L</b> {{ label.Left }}</span> <span> <b>R</b> {{ label.Right }}</span>
+          <span> <b>T</b> {{ label.Top }}</span> <span> <b>B</b> {{ label.Bottom }}</span>
+        </p>
+      </div>
+      <button
+        mat-icon-button
+        class="-small"
+        (click)="copyLabel($event, label)"
+        [matTooltip]="'ACTIONS.COPY_LABEL' | translate"
+        data-cy="copy"
+      >
+        <mat-icon svgIcon="copy"></mat-icon>
+      </button>
+    </div>
+  </rcv-confirm-button>
+</div>

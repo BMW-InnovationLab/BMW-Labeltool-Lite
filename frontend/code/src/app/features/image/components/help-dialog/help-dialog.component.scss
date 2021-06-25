@@ -1,0 +1,19 @@
+.help-text {
+  max-width: 30em;
+}
+
+.shortcut-item {
+  .header {
+    font-weight: bold;
+  }
+
+  .item {
+    flex: 1;
+  }
+}
+
+.version-info {
+  .header {
+    margin: 1em 0 0.3em;
+  }
+}

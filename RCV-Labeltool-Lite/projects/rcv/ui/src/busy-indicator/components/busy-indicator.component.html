@@ -1,7 +1,0 @@
-<mat-progress-bar
-  [mode]="(Progress$ | async) == null ? 'indeterminate' : 'determinate'"
-  [value]="Progress$ | async"
-></mat-progress-bar>
-<div class="message">{{ Message$ | async }}</div>
-
-<div class="backdrop"></div>

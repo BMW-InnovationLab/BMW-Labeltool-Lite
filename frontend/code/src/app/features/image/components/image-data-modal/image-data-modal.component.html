@@ -1,0 +1,23 @@
+<rcv-base-dialog
+  [title]="'IMAGE_DATA_MODAL.TITLE' | translate"
+  [submitActionAvailable]="false"
+  cancelActionLabel="Ok"
+>
+  <mat-form-field>
+    <input
+      matInput
+      [value]="data.imageName"
+      [placeholder]="'IMAGE_DATA_MODAL.IMAGE_NAME' | translate"
+      readonly
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      value="{{ data.imageWidth }} x {{ data.imageHeight }} px"
+      [placeholder]="'IMAGE_DATA_MODAL.IMAGE_SIZE' | translate"
+      readonly
+    />
+  </mat-form-field>
+</rcv-base-dialog>

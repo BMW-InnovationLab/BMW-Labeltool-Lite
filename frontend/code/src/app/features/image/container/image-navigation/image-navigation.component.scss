@@ -1,0 +1,61 @@
+:host {
+  margin: 0 -0.5em;
+
+  /* stylelint-disable-next-line selector-max-compound-selectors */
+  ::ng-deep mat-button-toggle .mat-button-toggle-label-content {
+    line-height: 24px !important;
+    padding: 3px !important;
+  }
+}
+
+mat-button-toggle-group {
+  width: 100px;
+}
+
+.image-pagination {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  position: relative;
+  top: 7px;
+}
+
+.image-index {
+  display: flex;
+
+  .count,
+  input {
+    display: inline-block;
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
+
+  input {
+    /* stylelint-disable property-no-vendor-prefix */
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+    /* stylelint-enable */
+  }
+}
+
+.slider-container {
+  align-items: center;
+  display: flex;
+  margin: 0 0.5em 0.5em;
+
+  button {
+    left: 7px;
+    position: relative;
+  }
+}
+
+.no-images {
+  margin: 1.4em 0;
+  text-align: center;
+}

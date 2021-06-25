@@ -1,0 +1,98 @@
+<rcv-base-dialog
+  [title]="'HELP_DIALOG.TITLE' | translate"
+  [submitActionAvailable]="false"
+  cancelActionLabel="Ok"
+>
+  <p class="help-text" translate>HELP_DIALOG.HELP_TEXT</p>
+
+  <mat-list dense>
+    <mat-list-item class="shortcut-item">
+      <label class="item header" translate>HELP_DIALOG.SHORTCUT</label>
+      <span class="item header" translate>HELP_DIALOG.MEANING</span>
+    </mat-list-item>
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'a' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.RESTORES_CURRENT_IMAGE</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'q' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.SHOWS_PREVIOUS_UNLABELED_IMAGE</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'w' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.SHOWS_PREVIOUS_IMAGE</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'e' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.SHOWS_NEXT_IMAGE</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'r' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.SHOWS_NEXT_UNLABELED_IMAGE</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'c' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.SAVES_CHANGES</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 's' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.SAVES_CHANGES_AND_SHOWS_NEXT_UNLABELED_IMAGE</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'v' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.COPIES_CURRENT_SELECTED_LABEL</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'f' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.TOGGLES_LABEL_FILL_OPTION</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: '↑' }">HELP_DIALOG.CTRL</label>
+      <span class="item" translate>HELP_DIALOG.INCREASES_LABEL_OUTLINE</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: '↓' }">HELP_DIALOG.CTRL</label>
+      <span class="item" translate>HELP_DIALOG.DECREASES_LABEL_OUTLINE</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate>HELP_DIALOG.ARROWS</label>
+      <span class="item" translate>HELP_DIALOG.MOVE_SELECTED_LABEL</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate>HELP_DIALOG.DEL</label>
+      <span class="item" translate>HELP_DIALOG.REMOVES_CURRENT_SELECTED_LABEL</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate [translateParams]="{ value: 'd' }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate>HELP_DIALOG.REMOVES_ALL_LABELS</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item">
+      <label class="item" translate>HELP_DIALOG.MOUSE_WHEEL</label>
+      <span class="item" translate>HELP_DIALOG.ZOOM</span>
+    </mat-list-item>
+
+    <mat-list-item class="shortcut-item" *ngFor="let shortcut of objectClassShortcuts; let i = index">
+      <label class="item" translate [translateParams]="{ value: i + 1 }">HELP_DIALOG.SHIFT</label>
+      <span class="item" translate [translateParams]="{ count: i + 1 }">HELP_DIALOG.OBJECT_CLASS</span>
+    </mat-list-item>
+  </mat-list>
+
+  <div class="version-info">
+    <h2 class="header" translate>HELP_DIALOG.VERSION</h2>
+    <span>{{ version }}</span>
+  </div>
+</rcv-base-dialog>

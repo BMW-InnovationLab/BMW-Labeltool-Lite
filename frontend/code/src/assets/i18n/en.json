@@ -1,0 +1,160 @@
+{
+  "ACTIONS": {
+    "ADD": "Add",
+    "CANCEL": "Cancel",
+    "COPY_LABEL": "Copy boundingbox.",
+    "DELETE": "Delete",
+    "HIDE_LABEL": "Hide boundingbox.",
+    "LABEL_COPIED": "Boundingbox copied",
+    "REMOVE": "Remove",
+    "RESET_ALL_CHANGES": "Reset all changes.",
+    "SAVE": "Save",
+    "SAVE_AND_NEXT_IN_OBJECTDETECTION": "Save & next image without boundingboxes",
+    "SAVE_AND_NEXT": "Save & Next",
+    "SHOW_LABEL": "Show boundingboxes."
+  },
+  "Background": "Background",
+  "Could not load image": "Could not load image",
+  "Could not load object classes": "Could not load object classes",
+  "Could not load topics": "Could not load topics",
+  "Could not remove image": "Could not remove image",
+  "Could not save labels": "Could not save boundingboxes",
+  "Could not upload image!": "Could not upload image",
+  "Delete current image with all labels": "Delete current image with all labels.",
+  "Assign current image to virtual topics": "Assign current image to virtual topics",
+  "Delete image?": "Delete image?",
+  "ERRORS": {
+    "INVALID_INPUT": "Invalid input",
+    "REQUIRED": "Value required"
+  },
+  "Eraser": "Eraser",
+  "Foreground": "Foreground",
+  "HELP_DIALOG": {
+    "ARROWS": "←↑↓→",
+    "COPIES_CURRENT_SELECTED_LABEL": "copies current selected boundingbox",
+    "CTRL": "Ctrl + { value }",
+    "DECREASES_LABEL_OUTLINE": "Decreases boundingbox outline",
+    "DEL": "Del",
+    "HELP_TEXT": "Labeltool will support you to create and edit labels very fast. To have fun with that tool read the following short guideline.",
+    "INCREASES_LABEL_OUTLINE": "Increases boundingbox outline",
+    "MEANING": "Meaning",
+    "MOUSE_WHEEL": "Shift + mouse wheel",
+    "MOVE_SELECTED_LABEL": "Moves selected boundingbox",
+    "OBJECT_CLASS": "{ count }{ count, plural, =1{st} =2{nd} =3{rd} other{th}  } object class",
+    "REMOVES_ALL_LABELS": "removes all boundingboxes from image",
+    "REMOVES_CURRENT_SELECTED_LABEL": "removes current selected boundingbox from image",
+    "RESTORES_CURRENT_IMAGE": "restores current image",
+    "SAVES_CHANGES": "saves changes",
+    "SAVES_CHANGES_AND_SHOWS_NEXT_UNLABELED_IMAGE": "saves changes and shows next unlabeled image",
+    "SHIFT": "Shift + { value }",
+    "SHORTCUT": "Shortcut",
+    "SHOWS_NEXT_IMAGE": "shows next image",
+    "SHOWS_NEXT_UNLABELED_IMAGE": "shows next unlabeled image",
+    "SHOWS_PREVIOUS_IMAGE": "shows previous image",
+    "SHOWS_PREVIOUS_UNLABELED_IMAGE": "shows previous unlabeled image",
+    "TITLE": "Shortcuts",
+    "TOGGLES_LABEL_FILL_OPTION": "toggles boundingbox fill option",
+    "VERSION": "RCV Labeltool Lite Version",
+    "ZOOM": "zooms image in/out"
+  },
+  "Hide all labels": "Hide all boundingboxes.",
+  "IMAGE_DATA_MODAL": {
+    "IMAGE_NAME": "Name",
+    "IMAGE_SIZE": "Size",
+    "TITLE": "Image attributes"
+  },
+  "IMAGE_NAVIGATION": {
+    "NEXT_IMAGE": "Next image",
+    "NEXT_UNLABELED_IMAGE": "Next image without boundingboxes",
+    "NO_IMAGES_AVAILABLE": "No images available",
+    "PREVIOUS_IMAGE": "Previous image",
+    "PREVIOUS_UNLABELED_IMAGE": "Previous image without boundingboxes"
+  },
+  "IMAGE_SIDENAV": {
+    "BRIGHTNESS": "Brightness",
+    "DECREASE_BRIGHTNESS": "Decrease the brightness of the image.",
+    "IMAGE_ATTRIBUTES_TOOLTIP": "Show image attributes.",
+    "INCREASE_BRIGHTNESS": "Increase the brightness of the image.",
+    "SELECT_TOPIC": "Select topic",
+    "ZOOM": "Zoom"
+  },
+  "IMAGE_STATE": {
+    "THUMBNAIL_LOAD_ERROR": "Could not load thumbnails!"
+  },
+  "IMAGE_THUMBNAIL_NAVIGATION": {
+    "NEXT": "Show next thumbnail.",
+    "PREVIOUS": "Show previous thumbnail.",
+    "TOGGLE": "Toggle thumbnails."
+  },
+  "Image count": "Image count",
+  "All pictures": "All pictures",
+  "Image uploaded": "Image uploaded",
+  "Label": "Boundingboxes",
+  "LABELS": {
+    "DISTANCE": "Distance",
+    "TRACK_ID": "Tracking ID"
+  },
+  "LABEL_ACTIONS": {
+    "FILL": "Fill",
+    "OUTLINE": "Outline"
+  },
+  "LABEL_ACTIONS_BAR": {
+    "SUGGEST_LABEL": "Intel OpenVINO Auto Label"
+  },
+  "LABEL_SUGGEST_DIALOG": {
+    "TITLE": "Intel OpenVINO Auto Label"
+  },
+  "Label settings": "Boundingbox settings",
+  "Model is required": "Model is required",
+  "Model": "Model",
+  "Model name is required": "Model name is required",
+  "Multi Model Suggestion": "Multi Model Suggestion",
+  "MULTI_MODEL_SUGGEST": {
+    "BASE_MODEL": "Base model",
+    "OBJECT_CLASS": "Object class"
+  },
+  "No Labels": "No Boundingboxes",
+  "No Object Classes": "No Object Classes",
+  "No image available": "No image available",
+  "Object Class": "Object Class",
+  "Objectclass is required": "Objectclass is required",
+  "Pen": "Pen",
+  "Please add some models": "Please add some models",
+  "Really run multi model suggest?": "Really run multi model suggest?",
+  "Really run single model suggest?": "Really run single model suggest?",
+  "Rectangle": "Rectangle",
+  "Remove all labels": "Remove all boundingboxes.",
+  "Remove all?": "Remove all?",
+  "Remove label": "Remove boundingbox.",
+  "Remove label?": "Remove boundingbox?",
+  "Removed all labels": "Removed all boundingboxes",
+  "Removed image": "Removed image",
+  "Removed label": "Removed boundingbox",
+  "Run": "Run",
+  "SUGGEST_RESULT": {
+    "IMAGES_PROCESSED": "Images processed",
+    "LABELS_FOUND": "Boundingboxes found",
+    "NO_OBJECTCLASS_STATISTIC": "No objectclasses found",
+    "OBJECTCLASS_STATISTIC": "Objectclass statistic",
+    "TITLE": "Suggestion complete"
+  },
+  "Saved labels": "Saved boundingboxes",
+  "Select an object class": "Select an object class",
+  "Select object class": "Select object class",
+  "Select object detection model": "Select object detection model",
+  "Select object detection service": "Select object detection service",
+  "Service is required": "Service is required",
+  "Show all labels": "Show all boundingboxes.",
+  "Show help for labeltool": "Show help for labeltool.",
+  "Single Model Suggestion": "Single Model Suggestion",
+  "Successfully reset all changes": "Successfully reset all changes",
+  "Suggest": "Suggest",
+  "Suggest label is not possible due to an error": "Suggest boundingboxes is not possible due to an error",
+  "TOPIC_SELECT_DIALOG": {
+    "TITLE": "Select topic"
+  },
+  "The image will be permanently deleted and cannot be restored": "The image will be permanently deleted and cannot be restored.",
+  "Upload image": "Upload image.",
+  "Zoom in": "Zoom in",
+  "Zoom out": "Zoom out"
+}
