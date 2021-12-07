@@ -1,4 +1,4 @@
-FROM node:lts as builder
+FROM node:14.18.2 as builder
 
 LABEL maintainer="jon@doe.com"
 
@@ -8,8 +8,6 @@ COPY ./code ./
 RUN yarn install && yarn build:prod
 
 FROM nginx:stable-alpine
-
-LABEL maintainer="jon@doe.com"
 
 COPY ./config/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /src/app/dist/labeltool/ /usr/share/nginx/html
