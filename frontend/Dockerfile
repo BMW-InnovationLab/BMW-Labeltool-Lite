@@ -1,7 +1,5 @@
 FROM node:14.18.2 as builder
 
-LABEL maintainer="jon@doe.com"
-
 WORKDIR /src/app
 COPY ./code ./
 
