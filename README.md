@@ -1,6 +1,6 @@
 ## LabelTool lite (update!!!)
 
----
+--- 
 
 This repository provides you with a image data annotation tool with little to no configuration needed! The lite version of the tool focuses on bounding box based training data annotation. You can start labeling your images for state-of-the-art deep learning training purposes right away with our dockerized _LabelTool lite_. You can also directly use the labels provided by the _LabelTool lite_ to train with our Yolov4 and Tensorflow Training GUI repositories:
 
