@@ -143,7 +143,7 @@ After finishing , your topics.json file should look like this :
 
 - Under "**volumes**" replace what's written before the ":" with your training-data folder absolute path. For Windows users, replace the "\\" in the path with "\\\\". (check the example below)
 
-  <img src="./data/repo-data/Capture2.png" height="540">
+  <img src="./data/repo-data/Capture2.PNG" height="540">
 
 - Open a Terminal , go to your project's repository , and run the command below :
 
@@ -203,7 +203,7 @@ Connect a trained model to the Labeltool GUI and accelerate the labeling process
 
 To connect the model container to the Labeltool, modify the docker-compose.yml file to include it and re-build all the applications together. An example of how one should modify the docker-compose.yml file is shown below:
 
- <img src="./data/repo-data/Capture5.png" >
+ <img src="./data/repo-data/Capture5.PNG" >
 
 
 ## Known Issues
