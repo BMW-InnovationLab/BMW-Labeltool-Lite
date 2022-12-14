@@ -181,7 +181,7 @@ python3 converttoyolo.py --dir myfirstdataset
 
 A new folder "yolo" is created inside your dataset's "labels" folder.
 
-- Go to training-data/
+- Go to data/training-data/
 
 - Copy your dataset folder
 
