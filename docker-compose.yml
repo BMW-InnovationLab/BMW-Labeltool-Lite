@@ -4,11 +4,11 @@ services:
     build:
       context: ./backend
       dockerfile: ./Dockerfile
-      args:
-          http_proxy: ""
-          https_proxy: ""
-          HTTP_PROXY: ""
-          HTTPS_PROXY: ""
+      # args:
+      #     http_proxy: ""
+      #     https_proxy: ""
+      #     HTTP_PROXY: ""
+      #     HTTPS_PROXY: ""
     image: labeltool.lite.backend:latest
     restart: unless-stopped
     networks:
@@ -22,11 +22,11 @@ services:
     build:
       context: ./frontend
       dockerfile: ./Dockerfile
-      args:
-          http_proxy: ""
-          https_proxy: ""
-          HTTP_PROXY: ""
-          HTTPS_PROXY: ""
+      # args:
+      #     http_proxy: ""
+      #     https_proxy: ""
+      #     HTTP_PROXY: ""
+      #     HTTPS_PROXY: ""
     image: labeltool.lite.frontend:latest
     restart: unless-stopped
     networks:
@@ -40,11 +40,11 @@ services:
     build:
       context: ./inference
       dockerfile: Dockerfile
-      args:
-          http_proxy: ""
-          https_proxy: ""
-          HTTP_PROXY: ""
-          HTTPS_PROXY: ""
+      # args:
+      #     http_proxy: ""
+      #     https_proxy: ""
+      #     HTTP_PROXY: ""
+      #     HTTPS_PROXY: ""
     image: labeltool.lite.inferance:latest
     networks:
       - labeltool-lite-net
