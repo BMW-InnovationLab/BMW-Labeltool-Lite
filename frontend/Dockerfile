@@ -1,7 +1,11 @@
-FROM node:14.18.2 as builder
+FROM node:14.21.3 as builder
 
 WORKDIR /src/app
 COPY ./code ./
+
+# RUN yarn config set proxy 
+# RUN yarn config set https-proxy 
+
 
 RUN yarn install && yarn build:prod
 

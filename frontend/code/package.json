@@ -52,7 +52,7 @@
     "svg.draggable.js": "^2.2.2",
     "svg.js": "^2.6.4",
     "svg.resize.js": "^1.4.1",
-    "svg.select.js": "github:svgdotjs/svg.select.js#master",
+    "svg.select.js": "github:svgdotjs/svg.select.js#58026d5",
     "web-animations-js": "^2.3.2",
     "zone.js": "~0.9.1"
   },
