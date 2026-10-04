@@ -1,4 +1,4 @@
-﻿using Rcv.FileUtils;
+using Rcv.FileUtils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,9 +41,9 @@ namespace Rcv.LabelTool.Logic.Utilities
             else
             {
                 // return all files if no filter is set.
-                return filePaths;
+                return filePaths.OrderBy(o => o, StringComparer.OrdinalIgnoreCase);
             }
-            return imageFileList;
+            return imageFileList.OrderBy(o => o, StringComparer.OrdinalIgnoreCase);
         }
 
         #endregion
